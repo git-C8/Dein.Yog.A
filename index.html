@@ -1,17 +1,507 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="de-AT">
 <head>
-    <meta charset="UTF-8">
-    <title>Dein.Yog.A | In Kürze online</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 100px; color: #555; background-color: #fcfbfa; }
-        h1 { color: #4a5d4e; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dein.Yog.A in Korneuburg: achtsame Bewegung, Kräftigung und Entspannung für Privatpersonen und Unternehmen. Entdecke Yogakurse und individuelle Firmenangebote mit Andrea Wimmer.">
+  <meta name="theme-color" content="#FAF8F5">
+  <title>Dein.Yog.A | Yoga & Achtsamkeit in Korneuburg</title>
+
+  <!-- Die externe Formatvorlage liegt im selben Ordner wie diese index.html. -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    Optionaler Font-Import:
+    Für datenschutzfreundliche Ladezeiten können die Webfonts lokal eingebunden
+    werden. Die Schrift-Fallbacks sind bereits in style.css definiert.
+  -->
 </head>
+
 <body>
-    <h1>Dein.Yog.A</h1>
-    <p>Achtsame Bewegung und Entspannung in Korneuburg.</p>
-    <p><em>Website im Aufbau – bald hier erreichbar.</em></p>
-    <p>Für mein Maunzi. Bussi.</p>
+  <!-- =====================================================
+       HEADER / HAUPTNAVIGATION
+       Die Navigation verweist auf die vorgesehenen Unterseiten.
+       ===================================================== -->
+  <header class="site-header site-header--sticky">
+    <div class="container header-inner">
+      <a class="site-logo" href="index.html" aria-label="Dein.Yog.A – zur Startseite">
+        <span>
+          Dein.Yog.A
+          <span class="site-logo__tagline">Yoga & Achtsamkeit</span>
+        </span>
+      </a>
+
+      <!-- Desktop-Navigation -->
+      <nav class="main-navigation" aria-label="Hauptnavigation">
+        <a href="index.html" aria-current="page">Start</a>
+        <a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a>
+        <a href="firmenyoga.html">Dein.Yog.A für Unternehmen</a>
+        <a href="retreat.html">Dein.Yog.Art of Retreat</a>
+        <a href="ueber-andrea.html">Über Andrea</a>
+        <a class="nav-cta" href="kontakt.html">Kontakt &amp; Anmeldung</a>
+      </nav>
+
+      <!-- Mobile-Menü-Schalter; die Navigation wird per JavaScript geöffnet. -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+      >
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Mobile-Navigation -->
+    <nav
+      class="mobile-navigation"
+      id="mobile-navigation"
+      aria-label="Mobile Navigation"
+      hidden
+    >
+      <a href="index.html" aria-current="page">Start</a>
+      <a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a>
+      <a href="firmenyoga.html">Dein.Yog.A für Unternehmen</a>
+      <a href="retreat.html">Dein.Yog.Art of Retreat</a>
+      <a href="ueber-andrea.html">Über Andrea</a>
+      <a href="kontakt.html">Kontakt &amp; Anmeldung</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =====================================================
+         HERO / EINSTIEGSBEREICH
+         Das Hintergrundbild ist ein austauschbarer Unsplash-
+         Platzhalter. Für den Live-Auftritt idealerweise durch
+         ein authentisches Foto von Andrea oder dem Yogaraum ersetzen.
+         ===================================================== -->
+    <section
+      class="hero hero--image"
+      aria-labelledby="hero-title"
+      style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"
+    >
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Yoga &amp; Achtsamkeit in Korneuburg</span>
+          <h1 id="hero-title">Dein Körper. Dein.Geist. Dein Atem. Deine Zeit. Dein.Yog.A.</h1>
+          <p class="hero-copy">
+            Achtsame Bewegung, Kräftigung und Entspannung – für Dich persönlich
+            und für Menschen in Deinem Unternehmen.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="yoga-fuer-dich.html">
+              Kurse für Dich entdecken
+            </a>
+            <a class="btn btn-outline" href="firmenyoga.html">
+              Firmenangebot anfragen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PERSÖNLICHE VORSTELLUNG
+         Bild-URL und Text können später mit Andreas finalen
+         Portrait- und Biografie-Inhalten ersetzt werden.
+         ===================================================== -->
+    <section class="section" aria-labelledby="andrea-title">
+      <div class="container content-grid">
+        <figure class="content-image">
+          <!-- PLATZHALTERBILD: später durch ein authentisches Andrea-Porträt ersetzen. -->
+          <img
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+            alt="Yoga-Praxis in einem hellen, ruhigen Raum"
+            loading="lazy"
+            width="900"
+            height="1125"
+          >
+          <figcaption class="image-caption">
+            Platzhalterfoto – wird durch ein persönliches Foto von Andrea ersetzt.
+          </figcaption>
+        </figure>
+
+        <div class="content-copy">
+          <span class="eyebrow">Schön, dass Du da bist</span>
+          <h2 id="andrea-title">Ich bin Andrea.</h2>
+          <p class="lead">
+            Mit Dein.Yog.A möchte ich Dir Raum geben, bewusst durchzuatmen,
+            Dich zu bewegen und Zeit für Dich zu nehmen.
+          </p>
+          <p>
+            In meinen Yogaeinheiten verbinden sich achtsame Bewegung,
+            Kräftigung und Entspannung. Im Mittelpunkt stehst Du – mit dem,
+            was Du gerade brauchst, und in Deinem eigenen Tempo.
+          </p>
+          <p>
+            Ich freue mich darauf, Dich kennenzulernen und gemeinsam mit Dir
+            zu praktizieren.
+          </p>
+          <a class="btn btn-outline" href="ueber-andrea.html">Mehr über Andrea</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         AKTUELLE SAISONALE JOURNEY
+         Saison- und Angebotsdaten später im CMS aktualisieren.
+         ===================================================== -->
+    <section class="section section--light" aria-labelledby="journey-title">
+      <div class="container content-grid content-grid--reverse">
+        <figure class="content-image content-image--landscape">
+          <!-- PLATZHALTERBILD: Herbststimmung / Yoga im Freien. -->
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="Ruhige, natürliche Landschaft in warmem Licht"
+            loading="lazy"
+            width="1200"
+            height="750"
+          >
+          <figcaption class="image-caption">
+            Platzhalterbild für die saisonale Dein.Yog.A Journey.
+          </figcaption>
+        </figure>
+
+        <div class="content-copy">
+          <span class="eyebrow">Oktober bis Dezember 2026</span>
+          <h2 id="journey-title">Dein.Yog.A – Herbst Journey 2026</h2>
+          <p class="lead">
+            Eine bewusste Auszeit im Wechsel der Jahreszeiten.
+          </p>
+          <p>
+            Nimm Dir Zeit, um anzukommen, durchzuatmen und neue Kraft zu
+            schöpfen. Die saisonalen Einheiten begleiten Dich mit achtsamer
+            Bewegung, stärkenden Übungen und wohltuender Entspannung durch
+            den Herbst.
+          </p>
+          <p>
+            Termine, Kursinhalte und Preise werden im Kursbereich aktuell
+            bekanntgegeben.
+          </p>
+          <a class="btn btn-primary" href="yoga-fuer-dich.html">
+            Die Herbst Journey entdecken
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ANGEBOTE FÜR PRIVATPERSONEN
+         Kursnamen sind als Vorschau angelegt. Termine und Preise
+         werden auf der Kurs-Unterseite ergänzt und gepflegt.
+         ===================================================== -->
+    <section class="section" aria-labelledby="private-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Deine Zeit für Dich</span>
+          <h2 id="private-title">Finde Deinen Flow.</h2>
+          <p>
+            Ob am Morgen oder am Abend: Entdecke die Einheit, die zu Deinem
+            Alltag und zu Dir passt.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-image">
+              <!-- PLATZHALTERBILD: Morgen-Yoga. -->
+              <img
+                src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                alt="Yogaübung auf einer Matte in einem hellen Raum"
+                loading="lazy"
+                width="900"
+                height="563"
+              >
+            </div>
+            <div class="card-body">
+              <span class="badge">Für einen bewussten Start</span>
+              <h3>Dein.MorgenFlow</h3>
+              <p>
+                Starte mit bewusster Bewegung und einem klaren Atem in Deinen
+                Tag. Finde Deine Balance und schenke Dir einen Moment nur für Dich.
+              </p>
+              <div class="card-footer">
+                <a class="btn btn-outline" href="yoga-fuer-dich.html">
+                  Mehr erfahren
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <!-- PLATZHALTERBILD: Abend-Yoga / Entspannung. -->
+              <img
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                alt="Person praktiziert eine ruhige Yoga-Dehnung"
+                loading="lazy"
+                width="900"
+                height="563"
+              >
+            </div>
+            <div class="card-body">
+              <span class="badge">Zeit zum Durchatmen</span>
+              <h3>Dein.AbendFlow</h3>
+              <p>
+                Lass den Alltag hinter Dir. Harmonisch aufgebaute Einheiten
+                verbinden Ankommen, stärkende Asanas, fließende Bewegungen und
+                einen ruhigen Abschluss.
+              </p>
+              <div class="card-footer">
+                <a class="btn btn-outline" href="yoga-fuer-dich.html">
+                  Kurse ansehen
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-5">
+          <a class="btn btn-primary" href="yoga-fuer-dich.html">
+            Alle Yogaangebote entdecken
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ANGEBOTE FÜR UNTERNEHMEN
+         ===================================================== -->
+    <section class="section section--sage" aria-labelledby="business-title">
+      <div class="container content-grid">
+        <figure class="content-image content-image--landscape">
+          <!-- PLATZHALTERBILD: gemeinsames Yoga / Team-Wohlbefinden. -->
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+            alt="Yoga und Bewegung als bewusste Pause"
+            loading="lazy"
+            width="1100"
+            height="688"
+          >
+          <figcaption class="image-caption">
+            Platzhalterbild – später idealerweise durch ein authentisches
+            Foto eines Firmen- oder Gruppenangebots ersetzen.
+          </figcaption>
+        </figure>
+
+        <div class="content-copy">
+          <span class="eyebrow">Dein.Yog.A für Unternehmen</span>
+          <h2 id="business-title">Eine bewusste Pause für Ihr Team.</h2>
+          <p class="lead">
+            Achtsame Bewegung und Entspannung als wertvolle Ergänzung des
+            Arbeitsalltags.
+          </p>
+          <p>
+            Gemeinsam entwickeln wir ein Angebot, das zu Ihrem Unternehmen,
+            Ihren Mitarbeiter:innen und Ihren zeitlichen Möglichkeiten passt.
+          </p>
+          <ul class="feature-list">
+            <li>Regelmäßiges Firmenyoga</li>
+            <li>Aktive Bewegungs- und Entspannungspausen</li>
+            <li>Individuelle Team-Sessions und Gesundheitstage</li>
+          </ul>
+          <a class="btn btn-primary" href="firmenyoga.html">
+            Firmenangebot anfragen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         STANDORT UND ANMELDUNG
+         ===================================================== -->
+    <section class="section" aria-labelledby="location-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Dein Platz zum Ankommen</span>
+          <h2 id="location-title">Yoga in Korneuburg.</h2>
+          <p>
+            Ich freue mich, Dich im Dein.Yog.A Room oder – je nach Wetterlage –
+            am Teich begrüßen zu dürfen.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-copy">
+            <h3>Dein.Yog.A</h3>
+            <address>
+              Im Jägerfeld 10<br>
+              2100 Korneuburg<br>
+              Österreich
+            </address>
+
+            <ul class="contact-list mt-4">
+              <li>
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <span>
+                  <strong>Telefon</strong><br>
+                  <a href="tel:+436649322789">+43 664 9322789</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <span>
+                  <strong>E-Mail</strong><br>
+                  <a href="mailto:andrea.wimmer@hotmail.com">andrea.wimmer@hotmail.com</a>
+                </span>
+              </li>
+            </ul>
+
+            <div class="cluster mt-4">
+              <a class="btn btn-primary" href="kontakt.html">Jetzt anmelden</a>
+              <a
+                class="btn btn-outline"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Im+J%C3%A4gerfeld+10%2C+Korneuburg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Route planen
+              </a>
+            </div>
+          </div>
+
+          <figure class="content-image content-image--landscape">
+            <!-- PLATZHALTERBILD: später durch ein Foto vom Dein.Yog.A Room oder Teich ersetzen. -->
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+              alt="Ruhige Yoga-Atmosphäre in der Natur"
+              loading="lazy"
+              width="1100"
+              height="688"
+            >
+            <figcaption class="image-caption">
+              Platzhalterbild – Dein.Yog.A Room oder der Bereich am Teich.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ABSCHLIESSENDER CALL TO ACTION
+         ===================================================== -->
+    <section class="section section--sand" aria-labelledby="cta-title">
+      <div class="container text-center">
+        <span class="eyebrow">Deine Zeit. Dein Atem. Dein.Yog.A.</span>
+        <h2 id="cta-title">Schenke Dir einen Moment für Dich.</h2>
+        <p class="lead" style="margin-inline: auto;">
+          Ich freue mich darauf, Dich auf der Matte willkommen zu heißen.
+        </p>
+        <a class="btn btn-primary mt-3" href="kontakt.html">
+          Kontakt &amp; Anmeldung
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       Rechtliche Seiten und Social-Media-Profile als Links.
+       Die Social-Media-URLs sind bis zur finalen Bekanntgabe
+       bewusst als Platzhalter hinterlegt.
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="site-logo" href="index.html">Dein.Yog.A</a>
+          <p>
+            Achtsame Bewegung, Kräftigung und Entspannung – für Dich und
+            Menschen in Deinem Unternehmen.
+          </p>
+          <p class="small">
+            Andrea Wimmer<br>
+            Im Jägerfeld 10, 2100 Korneuburg
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Entdecken</h2>
+          <ul class="footer-links">
+            <li><a href="yoga-fuer-dich.html">Yoga für Dich</a></li>
+            <li><a href="firmenyoga.html">Yoga für Unternehmen</a></li>
+            <li><a href="retreat.html">Dein.Yog.Art of Retreat</a></li>
+            <li><a href="ueber-andrea.html">Über Andrea</a></li>
+            <li><a href="kontakt.html">Kontakt &amp; Anmeldung</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Rechtliches</h2>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="teilnahmebedingungen.html">Teilnahmebedingungen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-title">In Verbindung bleiben</h2>
+          <ul class="footer-links">
+            <!-- Vor Veröffentlichung die tatsächlichen Profiladressen ergänzen. -->
+            <li>
+              <a href="#" aria-label="Facebook-Profil von Dein.Yog.A – Profiladresse noch ergänzen">
+                Facebook – Dein.Yog.A
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Instagram-Profil von Dein.Yog.A – Profiladresse noch ergänzen">
+                Instagram – Dein.Yog.A
+              </a>
+            </li>
+            <li><a href="mailto:andrea.wimmer@hotmail.com">E-Mail an Andrea</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> Dein.Yog.A – Andrea Wimmer. Alle Rechte vorbehalten.</span>
+        <span>Mit Achtsamkeit in Korneuburg.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kleines, frameworkfreies Skript für das barrierearme Mobile-Menü. -->
+  <script>
+    (() => {
+      const toggle = document.querySelector(".menu-toggle");
+      const mobileNavigation = document.getElementById("mobile-navigation");
+
+      if (!toggle || !mobileNavigation) return;
+
+      const closeMenu = () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+        mobileNavigation.classList.remove("is-open");
+        mobileNavigation.hidden = true;
+      };
+
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.setAttribute("aria-expanded", String(!isExpanded));
+        toggle.setAttribute(
+          "aria-label",
+          isExpanded ? "Menü öffnen" : "Menü schließen"
+        );
+        mobileNavigation.hidden = isExpanded;
+        mobileNavigation.classList.toggle("is-open", !isExpanded);
+      });
+
+      mobileNavigation.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      // Jahreszahl im Footer automatisch aktuell halten.
+      const year = document.getElementById("current-year");
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
+
