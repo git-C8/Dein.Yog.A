@@ -1,0 +1,1384 @@
+/*
+ * Dein.Yog.A – style.css
+ * Vollständige, responsive Basis-Formatvorlage für die Website in Korneuburg.
+ *
+ * Gestaltung:
+ * - Cremeweiß, Off-White, Sand und natürliche Grün-Akzente
+ * - Elegante Serifenschrift für Überschriften
+ * - Klare Sans-Serif-Schrift für Fließtexte und Bedienelemente
+ * - Mobile-First, großzügige Abstände und dezente Übergänge
+ *
+ * Einbindung:
+ *   <link rel="stylesheet" href="style.css">
+ *
+ * Hinweis zu Schriften:
+ * Die Font-Stacks enthalten lokale System-Fallbacks. Wenn Webfonts verwendet
+ * werden, sollten Cormorant Garamond und Plus Jakarta Sans lokal oder über
+ * einen datenschutzkonform eingebundenen Font-Dienst bereitgestellt werden.
+ */
+
+/* =========================================================
+   1. DESIGN-TOKENS / CSS-VARIABLEN
+   Zentrale Stelle für Farben, Typografie, Abstände und Formen.
+   ========================================================= */
+
+:root {
+  /* Markenfarben */
+  --color-cream: #FAF8F5;
+  --color-off-white: #F3EFEA;
+  --color-sand: #E6DEC8;
+  --color-sage: #7A8B7A;
+  --color-olive: #5C6B5C;
+  --color-text: #3B3834;
+
+  /* Ergänzende neutrale Farben */
+  --color-muted: #6E6860;
+  --color-white: #FFFFFF;
+  --color-border: #E2DBD0;
+  --color-border-strong: #CFC5B6;
+  --color-overlay: rgba(31, 35, 30, 0.48);
+
+  /* Zustandsfarben */
+  --color-success: #55745B;
+  --color-error: #A64E45;
+  --color-focus: #8A9B82;
+
+  /* Typografie */
+  --font-heading: "Cormorant Garamond", "Lora", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --font-size-xs: 0.78rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.3rem;
+
+  /* Fluid skalierte Überschriften */
+  --font-size-h1: clamp(2.6rem, 7vw, 5.2rem);
+  --font-size-h2: clamp(2.1rem, 4.8vw, 3.5rem);
+  --font-size-h3: clamp(1.55rem, 3vw, 2.15rem);
+  --font-size-h4: clamp(1.25rem, 2vw, 1.55rem);
+
+  --line-height-body: 1.75;
+  --line-height-heading: 1.16;
+
+  /* Layout und Abstände */
+  --container-width: 1140px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --section-space: clamp(4rem, 8vw, 7rem);
+  --space-1: 0.35rem;
+  --space-2: 0.65rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+
+  /* Formen, Schatten und Bewegung */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 8px 28px rgba(59, 56, 52, 0.07);
+  --shadow-card: 0 16px 42px rgba(59, 56, 52, 0.09);
+  --shadow-hover: 0 20px 48px rgba(59, 56, 52, 0.13);
+
+  --transition-fast: 180ms ease;
+  --transition-normal: 280ms ease;
+
+  /* Header */
+  --header-height: 76px;
+}
+
+/* =========================================================
+   2. RESET / GRUNDLAGEN
+   Einheitliches Box-Modell und gut kontrollierbare Defaults.
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  cursor: pointer;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: var(--color-olive);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-sage);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-sand);
+  color: var(--color-text);
+}
+
+/* Überschriften verwenden die elegante Serifenschrift der Marke. */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 1rem;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: var(--line-height-heading);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+p {
+  margin: 0 0 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  padding-left: 1.35rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+small,
+.small {
+  font-size: var(--font-size-sm);
+}
+
+strong,
+b {
+  font-weight: 650;
+}
+
+hr {
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  background: var(--color-border);
+}
+
+/* =========================================================
+   3. LAYOUT-HELFER
+   Wiederverwendbare Container und vertikale Abschnittsabstände.
+   ========================================================= */
+
+.container {
+  width: min(100% - (var(--gutter) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(100% - (var(--gutter) * 2), var(--container-wide));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--compact {
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.section--light {
+  background: var(--color-off-white);
+}
+
+.section--sand {
+  background: var(--color-sand);
+}
+
+.section--sage {
+  background: color-mix(in srgb, var(--color-sage) 13%, var(--color-cream));
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin: 0.8rem auto 0;
+  color: var(--color-muted);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  color: var(--color-olive);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 720px;
+  color: var(--color-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.stack > * + * {
+  margin-top: var(--space-4);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* =========================================================
+   4. HEADER UND HAUPTNAVIGATION
+   Schlicht, ruhig und auf kleinen Displays gut bedienbar.
+   ========================================================= */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: rgba(250, 248, 245, 0.96);
+  border-bottom: 1px solid rgba(226, 219, 208, 0.75);
+}
+
+.site-header--sticky {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.header-inner {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.site-logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  color: var(--color-olive);
+}
+
+.site-logo__tagline {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.8rem);
+}
+
+.main-navigation a {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 550;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.main-navigation a:hover,
+.main-navigation a[aria-current="page"] {
+  color: var(--color-olive);
+}
+
+.main-navigation .nav-cta {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-sage);
+  border-radius: var(--radius-pill);
+  color: var(--color-olive);
+}
+
+.main-navigation .nav-cta:hover {
+  background: var(--color-sage);
+  color: var(--color-white);
+}
+
+/*
+ * Mobile-Menü:
+ * Die Sichtbarkeit des Menüs wird über die Klasse .is-open gesteuert.
+ * Die eigentliche Öffnen-/Schließen-Funktion benötigt JavaScript oder
+ * eine passende HTML-Details-Lösung.
+ */
+.menu-toggle {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  content: "";
+}
+
+.menu-toggle__icon {
+  position: relative;
+}
+
+.menu-toggle__icon::before {
+  position: absolute;
+  top: -6px;
+}
+
+.menu-toggle__icon::after {
+  position: absolute;
+  top: 6px;
+}
+
+.mobile-navigation {
+  display: none;
+  padding: 0.5rem var(--gutter) 1.25rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-cream);
+}
+
+.mobile-navigation.is-open {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.mobile-navigation a {
+  padding: 0.7rem 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* =========================================================
+   5. BUTTONS / CALLS TO ACTION
+   Primärer Salbei-Button und zurückhaltende Outline-Variante.
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.55rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  border-color: var(--color-sage);
+  background: var(--color-sage);
+  color: var(--color-white);
+  box-shadow: 0 5px 16px rgba(122, 139, 122, 0.18);
+}
+
+.btn-primary:hover {
+  border-color: var(--color-olive);
+  background: var(--color-olive);
+  color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline {
+  border-color: var(--color-sage);
+  background: transparent;
+  color: var(--color-olive);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-sand);
+  background: var(--color-sand);
+  color: var(--color-text);
+}
+
+.btn-light {
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-olive);
+}
+
+.btn-light:hover {
+  border-color: var(--color-off-white);
+  background: var(--color-off-white);
+  color: var(--color-text);
+}
+
+.btn-small {
+  min-height: 40px;
+  padding: 0.6rem 1.1rem;
+  font-size: var(--font-size-sm);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* =========================================================
+   6. STARTSEITE / HERO
+   Bildstarker Einstieg mit klarer Botschaft und zwei Handlungen.
+   ========================================================= */
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: min(760px, calc(100svh - var(--header-height)));
+  align-items: center;
+  overflow: hidden;
+  padding-block: clamp(4rem, 9vw, 8rem);
+  background: var(--color-off-white);
+}
+
+.hero--image {
+  background-color: var(--color-off-white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero--image::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 248, 245, 0.94) 0%,
+    rgba(250, 248, 245, 0.78) 48%,
+    rgba(250, 248, 245, 0.18) 100%
+  );
+  content: "";
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: 1.3rem;
+}
+
+.hero-copy {
+  max-width: 650px;
+  margin-bottom: 2rem;
+  color: var(--color-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hero--centered {
+  text-align: center;
+}
+
+.hero--centered .hero-content,
+.hero--centered .hero-copy {
+  margin-inline: auto;
+}
+
+.hero--centered .hero-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   7. KARTEN FÜR KURSE UND ANGEBOTE
+   Einheitliche Darstellung für Kursübersichten und Teaser.
+   ========================================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-off-white);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.035);
+}
+
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.card-body h3 {
+  margin-bottom: 0.6rem;
+}
+
+.card-body p {
+  color: var(--color-muted);
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0.25rem 0 1rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.card-footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
+}
+
+.card--featured {
+  border-color: rgba(122, 139, 122, 0.55);
+  background: var(--color-off-white);
+}
+
+/* Dezente Kennzeichnung für aktuelle oder saisonale Angebote. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: rgba(122, 139, 122, 0.15);
+  color: var(--color-olive);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.price {
+  color: var(--color-olive);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   8. INHALTS- UND BILDABSCHNITTE
+   Zum Beispiel Andrea-Vorstellung oder Beschreibung einer Journey.
+   ========================================================= */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.content-image {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-off-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.content-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.content-image--landscape img {
+  aspect-ratio: 16 / 10;
+}
+
+.content-copy {
+  max-width: 620px;
+}
+
+.content-copy h2 {
+  margin-bottom: 1.2rem;
+}
+
+.content-copy p {
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   9. KURSABLAUF / SCHRITTE
+   Für Ankommen, Asanas & Flows sowie Cool-down.
+   ========================================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  counter-reset: yoga-step;
+}
+
+.step {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.52);
+  counter-increment: yoga-step;
+}
+
+.step::before {
+  display: inline-grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--color-sage);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  content: counter(yoga-step, decimal-leading-zero);
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   10. TERMINE UND PREISE
+   Übersichtliche Zeilen für saisonal wechselnde Kursdaten.
+   ========================================================= */
+
+.schedule-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-cream);
+}
+
+.schedule-date {
+  color: var(--color-olive);
+  font-weight: 700;
+}
+
+.schedule-detail {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.price-panel {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-off-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.price-panel__amount {
+  margin: 0.5rem 0;
+  color: var(--color-olive);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+.price-panel__note {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* =========================================================
+   11. FORMULARE / KONTAKT / ANMELDUNG
+   Gut lesbare Felder mit klaren Labels und Fokuszuständen.
+   ========================================================= */
+
+.form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-field label,
+.form-label {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 650;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.form-control {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.form-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #938B80;
+  opacity: 1;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+.form-control:focus {
+  border-color: var(--color-sage);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(122, 139, 122, 0.16);
+}
+
+.form-hint {
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.form-checkbox input {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
+  accent-color: var(--color-olive);
+}
+
+.form-message {
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.form-message--success {
+  background: rgba(85, 116, 91, 0.12);
+  color: var(--color-success);
+}
+
+.form-message--error {
+  background: rgba(166, 78, 69, 0.1);
+  color: var(--color-error);
+}
+
+/* =========================================================
+   12. UNTERNEHMENSANGEBOTE / HERVORHEBUNGEN
+   ========================================================= */
+
+.feature-list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  color: var(--color-muted);
+}
+
+.feature-list li::before {
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--color-sage);
+  content: "";
+}
+
+.callout {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(122, 139, 122, 0.28);
+  border-radius: var(--radius-lg);
+  background: var(--color-off-white);
+}
+
+.callout h2,
+.callout h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================================
+   13. KONTAKTDETAILS UND STANDORT
+   Telefonnummer und E-Mail können als klickbare Links erscheinen.
+   ========================================================= */
+
+.contact-list {
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.contact-list a {
+  overflow-wrap: anywhere;
+}
+
+.contact-icon {
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(122, 139, 122, 0.15);
+  color: var(--color-olive);
+}
+
+.map-frame {
+  min-height: 280px;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-off-white);
+}
+
+/* =========================================================
+   14. FOOTER
+   Ruhiger Abschluss mit Kontakt, Navigation und rechtlichen Links.
+   ========================================================= */
+
+.site-footer {
+  padding: 4rem 0 1.5rem;
+  background: #EDE8E0;
+  color: var(--color-text);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-brand p {
+  max-width: 360px;
+  margin-top: 1rem;
+  color: var(--color-muted);
+}
+
+.footer-title {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--color-olive);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border-strong);
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* =========================================================
+   15. BILDER / DEKORATIVE ELEMENTE
+   Für Porträts, Yogaraum und Außenbereich am Teich.
+   ========================================================= */
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-rounded {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.image-caption {
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.decorative-line {
+  width: 64px;
+  height: 1px;
+  margin: 1.25rem 0;
+  background: var(--color-sage);
+}
+
+.decorative-line--center {
+  margin-inline: auto;
+}
+
+/* =========================================================
+   16. HILFSKLASSEN / STATUS / SICHTBARKEIT
+   ========================================================= */
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: var(--space-1) !important; }
+.mt-2 { margin-top: var(--space-2) !important; }
+.mt-3 { margin-top: var(--space-3) !important; }
+.mt-4 { margin-top: var(--space-4) !important; }
+.mt-5 { margin-top: var(--space-5) !important; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: var(--space-1) !important; }
+.mb-2 { margin-bottom: var(--space-2) !important; }
+.mb-3 { margin-bottom: var(--space-3) !important; }
+.mb-4 { margin-bottom: var(--space-4) !important; }
+.mb-5 { margin-bottom: var(--space-5) !important; }
+
+/* =========================================================
+   17. RESPONSIVE BREAKPOINTS
+   Mobile-First: Grundlayout ist für Smartphones ausgelegt.
+   Ab Tablet und Desktop werden Spalten und Navigation erweitert.
+   ========================================================= */
+
+/* Kleine Smartphones und größere Smartphones */
+@media (min-width: 480px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .schedule-item {
+    grid-template-columns: minmax(130px, 0.7fr) 1.3fr;
+    align-items: center;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 82px;
+  }
+
+  .menu-toggle,
+  .mobile-navigation {
+    display: none !important;
+  }
+
+  .main-navigation {
+    display: flex;
+  }
+
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .content-grid--reverse .content-image {
+    order: 2;
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+  .card-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hero-content {
+    width: min(65%, 800px);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+}
+
+/* Schmale Displays: Navigation als mobile Variante.
+   Die Website sollte das mobile Menü per HTML/JavaScript zugänglich machen. */
+@media (max-width: 767px) {
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .main-navigation {
+    display: none;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero--image::before {
+    background: linear-gradient(
+      90deg,
+      rgba(250, 248, 245, 0.94),
+      rgba(250, 248, 245, 0.72)
+    );
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   18. BEWEGUNG UND ZUGÄNGLICHKEIT
+   Animationen bleiben dezent und respektieren Systemeinstellungen.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   19. DRUCKANSICHT
+   Reduziert Farben und Bedienelemente für Ausdrucke.
+   ========================================================= */
+
+@media print {
+  body {
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .menu-toggle,
+  .btn,
+  .hero-actions {
+    display: none !important;
+  }
+
+  .section {
+    padding-block: 1.25rem;
+  }
+
+  .card,
+  .price-panel,
+  .callout {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
