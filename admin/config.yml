@@ -1,0 +1,76 @@
+# Dein.Yog.A – Decap CMS
+# GitHub-Benutzername und Repository wurden anhand deiner Angaben eingetragen.
+
+backend:
+  name: turbo-github
+  # Diese ID nach dem Anlegen deiner Website in Decap Turbo hier einsetzen:
+  turbo_site_id: HIER_DEINE_SITE_ID_EINFUEGEN
+  branch: main
+
+site_url: https://dein-yoga.at
+display_url: https://dein-yoga.at
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "website"
+    label: "Website-Texte"
+    files:
+      - name: "website"
+        label: "Allgemeine Texte"
+        file: "_data/website.yml"
+        fields:
+          - { label: "Startseiten-Überschrift", name: "hero_title", widget: "string" }
+          - { label: "Startseiten-Untertitel", name: "hero_subtitle", widget: "text" }
+          - { label: "Einleitung Yoga für Dich", name: "yoga_intro", widget: "text" }
+          - { label: "Aktuelle Saison", name: "season_title", widget: "string" }
+          - { label: "Saisonzeitraum", name: "season_period", widget: "string" }
+          - { label: "Kontakt-Einleitung", name: "contact_intro", widget: "text" }
+          - { label: "Kontakt-Hinweis", name: "contact_note", widget: "text" }
+
+  - name: "kurse"
+    label: "Kurse"
+    files:
+      - name: "kurse"
+        label: "Kursangebote bearbeiten"
+        file: "_data/kurse.yml"
+        fields:
+          - label: "Kursangebote"
+            name: "kurse"
+            widget: "list"
+            summary: "{{fields.titel}}"
+            fields:
+              - { label: "Kurstitel", name: "titel", widget: "string" }
+              - { label: "Aktiv anzeigen", name: "aktiv", widget: "boolean", default: true }
+              - { label: "Saison", name: "saison", widget: "string", required: false }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - { label: "Wochentage", name: "wochentage", widget: "string", required: false }
+              - { label: "Uhrzeit", name: "uhrzeit", widget: "string", required: false }
+              - { label: "Dauer", name: "dauer", widget: "string", required: false }
+              - { label: "Anzahl Einheiten", name: "einheiten", widget: "string", required: false }
+              - { label: "Startdatum", name: "startdatum", widget: "datetime", required: false }
+              - { label: "Enddatum", name: "enddatum", widget: "datetime", required: false }
+              - { label: "Preis", name: "preis", widget: "string", required: false }
+              - { label: "Buchungslink", name: "buchungslink", widget: "string", required: false }
+              - { label: "Kursfoto", name: "bild", widget: "image", required: false }
+
+  - name: "termine"
+    label: "Termine"
+    files:
+      - name: "termine"
+        label: "Termine verwalten"
+        file: "_data/termine.yml"
+        fields:
+          - label: "Kurstermine"
+            name: "termine"
+            widget: "list"
+            summary: "{{fields.kurs}} – {{fields.datum}}"
+            fields:
+              - { label: "Kurs", name: "kurs", widget: "string" }
+              - { label: "Datum", name: "datum", widget: "datetime" }
+              - { label: "Beginn", name: "beginn", widget: "string", required: false }
+              - { label: "Veranstaltungsort", name: "ort", widget: "string", required: false }
+              - { label: "Buchbar", name: "buchbar", widget: "boolean", default: true }
+              - { label: "Buchungslink", name: "buchungslink", widget: "string", required: false }
+              - { label: "Interne Notiz", name: "notiz", widget: "text", required: false }

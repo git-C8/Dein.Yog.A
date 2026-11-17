@@ -1,0 +1,28 @@
+kurse:
+  - titel: "Dein.MorgenFlow"
+    aktiv: true
+    saison: "Herbst Journey 2026"
+    beschreibung: "Aktivierender Start in den Tag mit Bewegung, Atmung und Mobilisation."
+    wochentage: "Montags"
+    uhrzeit: "7:30–8:30 Uhr"
+    dauer: "60 Minuten"
+    einheiten: "7 Einheiten"
+    startdatum: ""
+    enddatum: ""
+    preis: ""
+    buchungslink: ""
+    bild: ""
+
+  - titel: "Klassisch! Dein.Yog.A Flow"
+    aktiv: true
+    saison: "Herbst Journey 2026"
+    beschreibung: "Achtsames Ankommen, kräftigende Asanas und fließende Bewegungen."
+    wochentage: "Montags und freitags"
+    uhrzeit: "Montags 19:00 Uhr, freitags 18:00 Uhr"
+    dauer: "ca. 75 Minuten"
+    einheiten: ""
+    startdatum: ""
+    enddatum: ""
+    preis: ""
+    buchungslink: ""
+    bild: ""
