@@ -1,9 +1,11 @@
+---
+---
 <!doctype html>
 <html lang="de-AT">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dein.Yog.A in Korneuburg: achtsame Bewegung, Kräftigung und Entspannung für Privatpersonen und Unternehmen. Entdecke Yogakurse und individuelle Firmenangebote mit Andrea Wimmer.">
+  <meta name="description" content="{{ site.data.website.hero_subtitle | default: 'Dein.Yog.A in Korneuburg: Yoga und Achtsamkeit.' | escape }}">
   <meta name="theme-color" content="#FAF8F5">
   <title>Dein.Yog.A | Yoga & Achtsamkeit in Korneuburg</title>
 
@@ -84,10 +86,9 @@
       <div class="container">
         <div class="hero-content">
           <span class="eyebrow">Yoga &amp; Achtsamkeit in Korneuburg</span>
-          <h1 id="hero-title">Dein Körper. Dein.Geist. Dein Atem. Deine Zeit. Dein.Yog.A.</h1>
+          <h1 id="hero-title">{{ site.data.website.hero_title | default: "Dein Körper. Dein.Geist. Dein Atem. Deine Zeit. Dein.Yog.A." | escape }}</h1>
           <p class="hero-copy">
-            Achtsame Bewegung, Kräftigung und Entspannung – für Dich persönlich
-            und für Menschen in Deinem Unternehmen.
+            {{ site.data.website.hero_subtitle | default: "Achtsame Bewegung, Kräftigung und Entspannung – für Dich persönlich und für Menschen in Deinem Unternehmen." | escape }}
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="yoga-fuer-dich.html">
@@ -164,8 +165,8 @@
         </figure>
 
         <div class="content-copy">
-          <span class="eyebrow">Oktober bis Dezember 2026</span>
-          <h2 id="journey-title">Dein.Yog.A – Herbst Journey 2026</h2>
+          <span class="eyebrow">{{ site.data.website.season_period | default: "Deine aktuelle Yoga-Saison" | escape }}</span>
+          <h2 id="journey-title">{{ site.data.website.season_title | default: "Dein.Yog.A – Deine aktuelle Journey" | escape }}</h2>
           <p class="lead">
             Eine bewusste Auszeit im Wechsel der Jahreszeiten.
           </p>
@@ -197,8 +198,7 @@
           <span class="eyebrow">Deine Zeit für Dich</span>
           <h2 id="private-title">Finde Deinen Flow.</h2>
           <p>
-            Ob am Morgen oder am Abend: Entdecke die Einheit, die zu Deinem
-            Alltag und zu Dir passt.
+            {{ site.data.website.yoga_intro | default: "Ob am Morgen oder am Abend: Entdecke die Einheit, die zu Deinem Alltag und zu Dir passt." | escape }}
           </p>
         </div>
 
@@ -317,8 +317,10 @@
           <span class="eyebrow">Dein Platz zum Ankommen</span>
           <h2 id="location-title">Yoga in Korneuburg.</h2>
           <p>
-            Ich freue mich, Dich im Dein.Yog.A Room oder – je nach Wetterlage –
-            am Teich begrüßen zu dürfen.
+            {{ site.data.website.contact_intro | default: "Ich freue mich, Dich im Dein.Yog.A Room oder – je nach Wetterlage – am Teich begrüßen zu dürfen." | escape }}
+          </p>
+          <p class="small">
+            {{ site.data.website.contact_note | default: "Deine Anmeldung wird persönlich von Andrea bestätigt." | escape }}
           </p>
         </div>
 
