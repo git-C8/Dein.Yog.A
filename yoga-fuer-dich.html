@@ -1,0 +1,204 @@
+---
+---
+<!doctype html>
+<html lang="de-AT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.data.yoga_fuer_dich.einleitung | strip_html | truncate: 155 | escape }}">
+  <meta name="theme-color" content="#FAF8F5">
+  <title>{{ site.data.yoga_fuer_dich.seitentitel | escape }} | Dein.Yog.A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header site-header--sticky">
+    <div class="container header-inner">
+      <a class="site-logo" href="index.html" aria-label="Dein.Yog.A – zur Startseite">
+        <span>Dein.Yog.A<span class="site-logo__tagline">Yoga &amp; Achtsamkeit</span></span>
+      </a>
+      <nav class="main-navigation" aria-label="Hauptnavigation">
+        <a href="index.html">Start</a>
+        <a href="yoga-fuer-dich.html" aria-current="page">Dein.Yog.A für Dich</a>
+        <a href="firmenyoga.html">Dein.Yog.A für Unternehmen</a>
+        <a href="retreat.html">Dein.Yog.Art of Retreat</a>
+        <a href="ueber-andrea.html">Über Andrea</a>
+        <a class="nav-cta" href="kontakt.html">Kontakt &amp; Anmeldung</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-navigation">
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile Navigation" hidden>
+      <a href="index.html">Start</a>
+      <a href="yoga-fuer-dich.html" aria-current="page">Dein.Yog.A für Dich</a>
+      <a href="firmenyoga.html">Dein.Yog.A für Unternehmen</a>
+      <a href="retreat.html">Dein.Yog.Art of Retreat</a>
+      <a href="ueber-andrea.html">Über Andrea</a>
+      <a href="kontakt.html">Kontakt &amp; Anmeldung</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero--centered" aria-labelledby="page-title">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Dein.Yog.A für Dich · Yoga in Korneuburg</span>
+          <h1 id="page-title">{{ site.data.yoga_fuer_dich.seitentitel | escape }}</h1>
+          <p class="hero-copy">{{ site.data.yoga_fuer_dich.einleitung | escape }}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#angebote">Yoga-Angebot entdecken</a>
+            <a class="btn btn-outline" href="{{ site.data.yoga_fuer_dich.button_link | default: 'kontakt.html' }}">Kontakt &amp; Anmeldung</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" aria-labelledby="saison-title">
+      <div class="container content-grid">
+        <div class="content-copy">
+          <span class="eyebrow">{{ site.data.yoga_fuer_dich.saison_zeitraum | escape }}</span>
+          <h2 id="saison-title">{{ site.data.yoga_fuer_dich.saison_titel | escape }}</h2>
+          <p class="lead">{{ site.data.yoga_fuer_dich.saison_beschreibung | escape }}</p>
+        </div>
+        <figure class="content-image content-image--landscape">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+               alt="Ruhige natürliche Landschaft als Symbol für eine bewusste Auszeit"
+               loading="lazy" width="1200" height="750">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="angebote" aria-labelledby="kurs-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Zeit für Dich</span>
+          <h2 id="kurs-title">{{ site.data.yoga_fuer_dich.kurs_titel | escape }}</h2>
+          <p class="lead">{{ site.data.yoga_fuer_dich.kurs_beschreibung | escape }}</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-body">
+              <h3>Für wen?</h3>
+              <p>{{ site.data.yoga_fuer_dich.zielgruppe | escape }}</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Dauer</h3>
+              <p>{{ site.data.yoga_fuer_dich.dauer | escape }}</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-heading mt-5">
+          <span class="eyebrow">So ist eine Einheit aufgebaut</span>
+          <h2>Dein Weg durch die Stunde.</h2>
+        </div>
+        <div class="card-grid card-grid--three">
+          <article class="card"><div class="card-body">
+            <h3>1. Ankommen &amp; Entspannen</h3>
+            <p>{{ site.data.yoga_fuer_dich.ablauf_ankommen | escape }}</p>
+          </div></article>
+          <article class="card"><div class="card-body">
+            <h3>2. Asanas &amp; Flows</h3>
+            <p>{{ site.data.yoga_fuer_dich.ablauf_flows | escape }}</p>
+          </div></article>
+          <article class="card"><div class="card-body">
+            <h3>3. Cool-down &amp; Endentspannung</h3>
+            <p>{{ site.data.yoga_fuer_dich.ablauf_entspannung | escape }}</p>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" aria-labelledby="hinweise-title">
+      <div class="container content-grid">
+        <div class="content-copy">
+          <span class="eyebrow">Gut vorbereitet</span>
+          <h2 id="hinweise-title">Alles, was Du wissen solltest.</h2>
+          <h3>Vor der Einheit</h3>
+          <p>{{ site.data.yoga_fuer_dich.ankunft_hinweis | escape }}</p>
+          <h3>Das bringst Du mit</h3>
+          <p>{{ site.data.yoga_fuer_dich.mitbringen | escape }}</p>
+          <h3>Ort</h3>
+          <p>{{ site.data.yoga_fuer_dich.ort_hinweis | escape }}</p>
+          <h3>Stornierung &amp; Teilnahme</h3>
+          <p>{{ site.data.yoga_fuer_dich.storno_hinweis | escape }}</p>
+          <p>{{ site.data.yoga_fuer_dich.teilnahme_hinweis | escape }}</p>
+          <a class="btn btn-primary mt-3" href="{{ site.data.yoga_fuer_dich.button_link | default: 'kontakt.html' }}">
+            {{ site.data.yoga_fuer_dich.button_text | escape }}
+          </a>
+        </div>
+        <figure class="content-image content-image--landscape">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+               alt="Yoga-Matte und ruhige Atmosphäre in einem hellen Raum"
+               loading="lazy" width="1100" height="688">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="site-logo" href="index.html">Dein.Yog.A</a>
+          <p>Achtsame Bewegung, Kräftigung und Entspannung – Deine Zeit für Dich.</p>
+          <p class="small">Andrea Wimmer<br>Im Jägerfeld 10, 2100 Korneuburg</p>
+        </div>
+        <div><h2 class="footer-title">Entdecken</h2>
+          <ul class="footer-links">
+            <li><a href="yoga-fuer-dich.html">Yoga für Dich</a></li>
+            <li><a href="firmenyoga.html">Yoga für Unternehmen</a></li>
+            <li><a href="retreat.html">Dein.Yog.Art of Retreat</a></li>
+            <li><a href="ueber-andrea.html">Über Andrea</a></li>
+            <li><a href="kontakt.html">Kontakt &amp; Anmeldung</a></li>
+          </ul>
+        </div>
+        <div><h2 class="footer-title">Rechtliches</h2>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="teilnahmebedingungen.html">Teilnahmebedingungen</a></li>
+          </ul>
+        </div>
+        <div><h2 class="footer-title">In Verbindung bleiben</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:andrea.wimmer@hotmail.com">E-Mail an Andrea</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> Dein.Yog.A – Andrea Wimmer. Alle Rechte vorbehalten.</span>
+        <span>Mit Achtsamkeit in Korneuburg.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const toggle = document.querySelector(".menu-toggle");
+      const mobileNavigation = document.getElementById("mobile-navigation");
+      if (!toggle || !mobileNavigation) return;
+      const closeMenu = () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+        mobileNavigation.classList.remove("is-open");
+        mobileNavigation.hidden = true;
+      };
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!isExpanded));
+        toggle.setAttribute("aria-label", isExpanded ? "Menü öffnen" : "Menü schließen");
+        mobileNavigation.hidden = isExpanded;
+        mobileNavigation.classList.toggle("is-open", !isExpanded);
+      });
+      mobileNavigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+      const year = document.getElementById("current-year");
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
