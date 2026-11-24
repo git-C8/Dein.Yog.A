@@ -1,28 +1,40 @@
 kurse:
-  - titel: "Dein.MorgenFlow"
-    aktiv: true
-    saison: "Herbst Journey 2026"
-    beschreibung: "Aktivierender Start in den Tag mit Bewegung, Atmung und Mobilisation."
-    wochentage: "Montags"
-    uhrzeit: "7:30–8:30 Uhr"
-    dauer: "60 Minuten"
-    einheiten: "7 Einheiten"
+  - dauer: 60 Minuten
+    titel: Dein.MorgenFlow
+    beschreibung: Aktivierender Start in den Tag mit Bewegung, Atmung und Mobilisation.
     startdatum: ""
-    enddatum: ""
     preis: ""
-    buchungslink: ""
-    bild: ""
-
-  - titel: "Klassisch! Dein.Yog.A Flow"
+    wochentage: Montags
+    enddatum: ""
+    uhrzeit: 7:30–8:30 Uhr
     aktiv: true
-    saison: "Herbst Journey 2026"
-    beschreibung: "Achtsames Ankommen, kräftigende Asanas und fließende Bewegungen."
-    wochentage: "Montags und freitags"
-    uhrzeit: "Montags 19:00 Uhr, freitags 18:00 Uhr"
-    dauer: "ca. 75 Minuten"
+    buchungslink: ""
+    saison: Herbst Journey 2026
+    einheiten: 7 Einheiten
+    bild: ""
+  - dauer: ca. 75 Minuten
+    titel: Klassisch! Dein.Yog.A Flow
+    beschreibung: Achtsames Ankommen, kräftigende Asanas und fließende Bewegungen.
+    startdatum: ""
+    preis: ""
+    wochentage: Montags und freitags
+    enddatum: ""
+    uhrzeit: Montags 19:00 Uhr, freitags 18:00 Uhr
+    aktiv: true
+    buchungslink: ""
+    saison: Herbst Journey 2026
     einheiten: ""
-    startdatum: ""
-    enddatum: ""
-    preis: ""
-    buchungslink: ""
     bild: ""
+  - dauer: 60 Minuten
+    titel: Dein.IndividuellerFlow
+    beschreibung: Diese Einheit wird auf eure individuellen Bedürfnisse und Ziele
+      zugeschnitten.
+    startdatum: 2026-11-24T20:44:00.000+01:00
+    preis: ab 500 Euro
+    wochentage: nach Vereinbarung
+    enddatum: 2027-11-24T20:44:00.000+01:00
+    uhrzeit: nach Vereinbarung
+    aktiv: true
+    saison: Winter 2027
+    einheiten: ab 5 Einheiten
+    bild: /images/uploads/header-picture.png
