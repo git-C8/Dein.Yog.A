@@ -141,29 +141,102 @@ collections:
         file: "_data/yoga_fuer_dich.yml"
         fields:
           - { label: "Seitentitel", name: "seitentitel", widget: "string" }
-          - { label: "Einleitung", name: "einleitung", widget: "text" }
-          - { label: "Saisonüberschrift", name: "saison_titel", widget: "string" }
-          - { label: "Saisonzeitraum", name: "saison_zeitraum", widget: "string" }
-          - { label: "Saison-Einleitung", name: "saison_einleitung", widget: "text" }
-          - { label: "Saisonbeschreibung", name: "saison_beschreibung", widget: "text" }
-          - { label: "Anzahl / Termine", name: "saison_termine", widget: "text" }
-          - { label: "Saisonmodell", name: "saison_modell", widget: "text" }
-          - { label: "Early-Bird-Text", name: "early_bird_text", widget: "string" }
-          - { label: "Early-Bird-Stichtag", name: "early_bird_deadline", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-          - { label: "Kursüberschrift", name: "kurs_titel", widget: "string" }
-          - { label: "Kursbeschreibung", name: "kurs_beschreibung", widget: "text" }
-          - { label: "Zielgruppe", name: "zielgruppe", widget: "string" }
-          - { label: "Dauer", name: "dauer", widget: "string" }
-          - { label: "Ablauf – Ankommen", name: "ablauf_ankommen", widget: "text" }
-          - { label: "Ablauf – Flows", name: "ablauf_flows", widget: "text" }
-          - { label: "Ablauf – Entspannung", name: "ablauf_entspannung", widget: "text" }
-          - { label: "Ankunft", name: "ankunft_hinweis", widget: "text" }
-          - { label: "Mitbringen", name: "mitbringen", widget: "text" }
-          - { label: "Ort", name: "ort_hinweis", widget: "text" }
-          - { label: "Stornierung", name: "storno_hinweis", widget: "text" }
-          - { label: "Teilnahme", name: "teilnahme_hinweis", widget: "text" }
-          - { label: "Button-Text", name: "button_text", widget: "string" }
-          - { label: "Button-Link", name: "button_link", widget: "string" }
+          - label: "1. Erklärung Dein.Yog.A"
+            name: "erklaerung"
+            widget: "object"
+            fields:
+              - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Schlusssatz", name: "schlusssatz", widget: "string" }
+              - { label: "Button-Text", name: "button_text", widget: "string" }
+              - { label: "Button-Link", name: "button_link", widget: "string" }
+          - label: "2. Journey"
+            name: "journey"
+            widget: "object"
+            fields:
+              - { label: "Zeitraum", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Einleitung", name: "einleitung", widget: "text" }
+              - { label: "Bezeichnung Montag", name: "montag_label", widget: "string" }
+              - { label: "Bezeichnung Donnerstag", name: "donnerstag_label", widget: "string" }
+              - { label: "Uhrzeit", name: "zeit", widget: "string" }
+              - label: "Wochenübersicht Montag / Donnerstag"
+                name: "wochen"
+                widget: "list"
+                summary: "Woche {{index}}"
+                fields:
+                  - { label: "Montag", name: "montag", widget: "string", required: false }
+                  - { label: "Donnerstag", name: "donnerstag", widget: "string", required: false }
+              - { label: "Samstagsreise – Überschrift", name: "samstag_titel", widget: "string" }
+              - { label: "Samstagsreise – Uhrzeit", name: "samstag_zeit", widget: "string" }
+              - label: "Samstagstermine"
+                name: "samstage"
+                widget: "list"
+                field: { label: "Termin", name: "datum", widget: "string" }
+              - { label: "Hinweis Kleingruppen", name: "kleingruppen_hinweis", widget: "string" }
+          - label: "3. Teilnahme- und Kostenmodelle"
+            name: "modelle"
+            widget: "object"
+            fields:
+              - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Einleitung", name: "einleitung", widget: "text" }
+              - label: "Angebote"
+                name: "angebote"
+                widget: "list"
+                summary: "{{fields.titel}} – {{fields.preis}}"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Preis", name: "preis", widget: "string" }
+                  - { label: "Umfang", name: "umfang", widget: "string" }
+                  - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+                  - label: "Leistungen"
+                    name: "leistungen"
+                    widget: "list"
+                    field: { label: "Leistung", name: "leistung", widget: "string" }
+              - { label: "Hinweis Gruppengröße", name: "gruppenhinweis", widget: "string" }
+          - label: "4. Early Bird"
+            name: "early_bird"
+            widget: "object"
+            fields:
+              - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Einleitung", name: "einleitung", widget: "text" }
+              - { label: "Stichtag", name: "stichtag", widget: "string" }
+              - label: "Frühbucherpreise"
+                name: "angebote"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                fields:
+                  - { label: "Angebot", name: "titel", widget: "string" }
+                  - { label: "Normalpreis", name: "normalpreis", widget: "string" }
+                  - { label: "Frühbucherpreis", name: "fruehbucherpreis", widget: "string" }
+          - label: "5. Aufbau der Session"
+            name: "session"
+            widget: "object"
+            fields:
+              - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - label: "Session-Schritte"
+                name: "schritte"
+                widget: "list"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Beschreibung", name: "text", widget: "text" }
+              - { label: "Zielgruppe – Überschrift", name: "zielgruppe_titel", widget: "string" }
+              - { label: "Zielgruppe – Text", name: "zielgruppe_text", widget: "text" }
+              - { label: "Dauer", name: "dauer", widget: "string" }
+          - label: "6. Alles, was du wissen solltest"
+            name: "wissen"
+            widget: "object"
+            fields:
+              - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Vor der Einheit – Überschrift", name: "vorbereitung_titel", widget: "string" }
+              - { label: "Vor der Einheit – Text", name: "vorbereitung_text", widget: "text" }
+              - { label: "Gesundheit – Überschrift", name: "gesundheit_titel", widget: "string" }
+              - { label: "Gesundheit – Text", name: "gesundheit_text", widget: "text" }
 
   - name: "seiten"
     label: "Weitere Seiten"
