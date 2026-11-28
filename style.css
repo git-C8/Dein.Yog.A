@@ -110,3 +110,17 @@
 .retreat-contact__inner p{max-width:650px;margin:0 auto;color:#555d54}
 .retreat-contact__inner .btn{margin-top:1.7rem}
 @media(max-width:700px){.retreat-hero{min-height:460px;padding:5rem 0}.retreat-hero:before{left:-320px}.retreat-hero:after{right:-390px}.retreat-experience__layout{grid-template-columns:1fr;gap:2rem}.retreat-experience__side{gap:1.2rem}.retreat-experience__copy h2{font-size:2.6rem}}
+
+
+/* Impressum – ruhige, gut lesbare Rechteseite im Dein.Yog.A-Design */
+.legal-hero{padding:clamp(4rem,8vw,6.5rem) 0;background:var(--sand)}
+.legal-hero .container{max-width:900px}
+.legal-hero h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:1rem}
+.legal-hero .lead{max-width:650px;color:#555d54}
+.legal-content{padding-block:clamp(3rem,6vw,5rem)}
+.legal-card{max-width:900px;padding:clamp(1.6rem,4vw,3.5rem);background:rgba(255,255,255,.72);border:1px solid var(--line)}
+.legal-block{padding:0 0 1.5rem;margin:0 0 1.5rem;border-bottom:1px solid var(--line)}
+.legal-block:last-child{padding:0;margin:0;border:0}
+.legal-block h2{font-size:1.75rem;margin-bottom:.6rem}
+.legal-block p,.legal-block address{color:#555d54;font-size:.95rem;font-style:normal}
+.legal-block a{color:var(--green);text-underline-offset:3px}
