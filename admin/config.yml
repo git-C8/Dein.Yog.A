@@ -245,11 +245,43 @@ collections:
         label: "Über Andrea"
         file: "_data/ueber_andrea.yml"
         fields:
-          - { label: "Seitentitel", name: "title", widget: "string" }
+          - { label: "SEO-Beschreibung", name: "meta_description", widget: "text" }
+          - { label: "Kleine Überschrift im Einstieg", name: "eyebrow", widget: "string" }
+          - { label: "Hauptüberschrift", name: "hero_title", widget: "string" }
+          - { label: "Untertitel", name: "hero_subtitle", widget: "string" }
           - { label: "Einleitung", name: "intro", widget: "text" }
-          - { label: "Porträtbild", name: "image", widget: "image", required: false }
-          - { label: "Über mich", name: "body", widget: "text" }
-          - { label: "Qualifikationen", name: "qualifications", widget: "list", field: { label: "Qualifikation", name: "qualification", widget: "string" } }
+          - { label: "Zitat im Einstiegsbereich", name: "intro_quote", widget: "text" }
+          - { label: "Porträtbild", name: "image", widget: "image" }
+          - { label: "Bild-Alternativtext", name: "image_alt", widget: "string" }
+          - { label: "Mein Weg – kleine Überschrift", name: "journey_eyebrow", widget: "string" }
+          - { label: "Mein Weg – Überschrift", name: "journey_title", widget: "string" }
+          - label: "Mein Weg – Textabsätze"
+            name: "journey_paragraphs"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - { label: "Ausbildungen – kleine Überschrift", name: "training_eyebrow", widget: "string" }
+          - { label: "Ausbildungen – Überschrift", name: "training_title", widget: "string" }
+          - label: "Ausbildungen und Qualifikationen"
+            name: "qualifications"
+            widget: "list"
+            field: { label: "Qualifikation", name: "qualification", widget: "string" }
+          - { label: "Überleitung zu Dein.Yog.A", name: "origin_text", widget: "text" }
+          - { label: "Philosophie – kleine Überschrift", name: "philosophy_eyebrow", widget: "string" }
+          - { label: "Philosophie – Überschrift", name: "philosophy_title", widget: "string" }
+          - label: "Philosophie – Textabsätze"
+            name: "philosophy_paragraphs"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - { label: "Dein Yoga – kleine Überschrift", name: "yoga_eyebrow", widget: "string" }
+          - { label: "Dein Yoga – Überschrift", name: "yoga_title", widget: "string" }
+          - label: "Dein Yoga – Textabsätze"
+            name: "yoga_paragraphs"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - { label: "Abschließendes Zitat", name: "closing_quote", widget: "text" }
+          - { label: "Abschlusstext", name: "closing_text", widget: "text" }
+          - { label: "Grußformel", name: "signoff", widget: "string" }
+          - { label: "Unterschrift", name: "signature", widget: "string" }
       - name: "retreat"
         label: "Dein.Yog.Art of Retreat"
         file: "_data/retreat.yml"
