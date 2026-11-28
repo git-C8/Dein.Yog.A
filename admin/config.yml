@@ -1,6 +1,3 @@
-# Dein.Yog.A – Decap CMS
-# Bestehende Collections bleiben erhalten; neu ergänzt wird „Yoga für Dich“.
-
 backend:
   name: turbo-github
   turbo_site_id: ba1043dc-ce18-4c26-ae42-63f5c7b2876b
@@ -8,31 +5,74 @@ backend:
 
 site_url: https://dein-yoga.at
 display_url: https://dein-yoga.at
+locale: de
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
   - name: "website"
-    label: "Website-Texte"
+    label: "Willkommen – Homepage"
     files:
       - name: "website"
-        label: "Allgemeine Texte"
+        label: "Homepage-Inhalte"
         file: "_data/website.yml"
         fields:
-          - { label: "Startseiten-Überschrift", name: "hero_title", widget: "string" }
-          - { label: "Startseiten-Untertitel", name: "hero_subtitle", widget: "text" }
-          - { label: "Einleitung Yoga für Dich", name: "yoga_intro", widget: "text" }
-          - { label: "Aktuelle Saison", name: "season_title", widget: "string" }
-          - { label: "Saisonzeitraum", name: "season_period", widget: "string" }
-          - { label: "Kontakt-Einleitung", name: "contact_intro", widget: "text" }
-          - { label: "Kontakt-Hinweis", name: "contact_note", widget: "text" }
+          - { label: "Hero-Überschrift", name: "hero_title", widget: "string" }
+          - { label: "Hero-Untertitel", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero-Bild", name: "hero_image", widget: "image" }
+          - { label: "Begrüßung – Überschrift", name: "intro_title", widget: "string" }
+          - { label: "Begrüßung – Unterüberschrift", name: "intro_subtitle", widget: "string" }
+          - label: "Begrüßung – Textabsätze"
+            name: "intro_paragraphs"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - { label: "Begrüßung – Abschlusssatz", name: "intro_closing", widget: "string" }
+          - { label: "Begrüßungsbild", name: "intro_image", widget: "image" }
+          - { label: "Winter.Journey anzeigen", name: "journey_visible", widget: "boolean", default: true }
+          - { label: "Journey-Titel", name: "journey_title", widget: "string" }
+          - { label: "Journey-Zeitraum", name: "journey_period", widget: "string" }
+          - { label: "Journey-Einleitung", name: "journey_intro", widget: "text" }
+          - label: "Journey-Beschreibung"
+            name: "journey_description"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - { label: "Early-Bird-Text", name: "early_bird_text", widget: "string" }
+          - { label: "Early-Bird-Stichtag", name: "early_bird_deadline", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+          - { label: "Journey-Bild", name: "journey_image", widget: "image" }
+          - { label: "Journey-Button", name: "journey_button_text", widget: "string" }
+          - { label: "Journey-Link", name: "journey_button_link", widget: "string" }
+          - { label: "Standort-Überschrift", name: "location_title", widget: "string" }
+          - { label: "Standort-Unterüberschrift", name: "location_subtitle", widget: "string" }
+          - label: "Standort-Textabsätze"
+            name: "location_paragraphs"
+            widget: "list"
+            field: { label: "Absatz", name: "paragraph", widget: "text" }
+          - label: "Standort-Bildcarousel (genau 4 Bilder)"
+            name: "location_images"
+            widget: "list"
+            min: 4
+            max: 4
+            fields:
+              - { label: "Bild", name: "image", widget: "image" }
+              - { label: "Alternativtext", name: "alt", widget: "string" }
+          - { label: "Anmeldebutton", name: "location_button_text", widget: "string" }
+          - { label: "Route-Button", name: "route_button_text", widget: "string" }
+          - { label: "Routen-Link", name: "route_link", widget: "string" }
+          - { label: "CTA-Überschrift", name: "cta_title", widget: "string" }
+          - { label: "CTA-Zeile 1", name: "cta_line_one", widget: "string" }
+          - { label: "CTA-Zeile 2", name: "cta_line_two", widget: "text" }
+          - { label: "CTA-Button", name: "cta_button_text", widget: "string" }
+          - { label: "Kontakt-E-Mail", name: "contact_email", widget: "string" }
+          - { label: "Telefonnummer", name: "contact_phone", widget: "string" }
+          - { label: "Facebook-URL", name: "facebook_url", widget: "string", required: false }
+          - { label: "Instagram-URL", name: "instagram_url", widget: "string", required: false }
 
   - name: "kurse"
     label: "Kurse"
     files:
       - name: "kurse"
-        label: "Kursangebote bearbeiten"
+        label: "Kursangebote verwalten"
         file: "_data/kurse.yml"
         fields:
           - label: "Kursangebote"
@@ -42,12 +82,12 @@ collections:
             fields:
               - { label: "Kurstitel", name: "titel", widget: "string" }
               - { label: "Aktiv anzeigen", name: "aktiv", widget: "boolean", default: true }
-              - { label: "Saison", name: "saison", widget: "string", required: false }
               - { label: "Beschreibung", name: "beschreibung", widget: "text" }
               - { label: "Wochentage", name: "wochentage", widget: "string", required: false }
               - { label: "Uhrzeit", name: "uhrzeit", widget: "string", required: false }
               - { label: "Dauer", name: "dauer", widget: "string", required: false }
               - { label: "Anzahl Einheiten", name: "einheiten", widget: "string", required: false }
+              - { label: "Saison", name: "saison", widget: "string", required: false }
               - { label: "Startdatum", name: "startdatum", widget: "datetime", required: false }
               - { label: "Enddatum", name: "enddatum", widget: "datetime", required: false }
               - { label: "Preis", name: "preis", widget: "string", required: false }
@@ -72,31 +112,57 @@ collections:
               - { label: "Veranstaltungsort", name: "ort", widget: "string", required: false }
               - { label: "Buchbar", name: "buchbar", widget: "boolean", default: true }
               - { label: "Buchungslink", name: "buchungslink", widget: "string", required: false }
-              - { label: "Interne Notiz", name: "notiz", widget: "text", required: false }
 
   - name: "yoga-fuer-dich"
-    label: "Yoga für Dich"
+    label: "Dein.Yog.A für Dich"
     files:
       - name: "yoga-fuer-dich"
-        label: "Seite Yoga für Dich bearbeiten"
+        label: "Angebotsseite bearbeiten"
         file: "_data/yoga_fuer_dich.yml"
         fields:
           - { label: "Seitentitel", name: "seitentitel", widget: "string" }
           - { label: "Einleitung", name: "einleitung", widget: "text" }
           - { label: "Saisonüberschrift", name: "saison_titel", widget: "string" }
           - { label: "Saisonzeitraum", name: "saison_zeitraum", widget: "string" }
+          - { label: "Saison-Einleitung", name: "saison_einleitung", widget: "text" }
           - { label: "Saisonbeschreibung", name: "saison_beschreibung", widget: "text" }
+          - { label: "Anzahl / Termine", name: "saison_termine", widget: "text" }
+          - { label: "Saisonmodell", name: "saison_modell", widget: "text" }
+          - { label: "Early-Bird-Text", name: "early_bird_text", widget: "string" }
+          - { label: "Early-Bird-Stichtag", name: "early_bird_deadline", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
           - { label: "Kursüberschrift", name: "kurs_titel", widget: "string" }
           - { label: "Kursbeschreibung", name: "kurs_beschreibung", widget: "text" }
-          - { label: "Für wen ist der Kurs geeignet?", name: "zielgruppe", widget: "string" }
+          - { label: "Zielgruppe", name: "zielgruppe", widget: "string" }
           - { label: "Dauer", name: "dauer", widget: "string" }
-          - { label: "Ablauf – Ankommen & Entspannen", name: "ablauf_ankommen", widget: "text" }
-          - { label: "Ablauf – Asanas & Flows", name: "ablauf_flows", widget: "text" }
-          - { label: "Ablauf – Cool-down & Endentspannung", name: "ablauf_entspannung", widget: "text" }
-          - { label: "Hinweis zur Ankunft", name: "ankunft_hinweis", widget: "text" }
-          - { label: "Was soll ich mitbringen?", name: "mitbringen", widget: "text" }
-          - { label: "Ort und Raum", name: "ort_hinweis", widget: "text" }
-          - { label: "Stornobedingung", name: "storno_hinweis", widget: "text" }
-          - { label: "Teilnahmehinweis", name: "teilnahme_hinweis", widget: "text" }
-          - { label: "Button-Beschriftung", name: "button_text", widget: "string" }
-          - { label: "Kontakt-/Buchungsseite", name: "button_link", widget: "string" }
+          - { label: "Ablauf – Ankommen", name: "ablauf_ankommen", widget: "text" }
+          - { label: "Ablauf – Flows", name: "ablauf_flows", widget: "text" }
+          - { label: "Ablauf – Entspannung", name: "ablauf_entspannung", widget: "text" }
+          - { label: "Ankunft", name: "ankunft_hinweis", widget: "text" }
+          - { label: "Mitbringen", name: "mitbringen", widget: "text" }
+          - { label: "Ort", name: "ort_hinweis", widget: "text" }
+          - { label: "Stornierung", name: "storno_hinweis", widget: "text" }
+          - { label: "Teilnahme", name: "teilnahme_hinweis", widget: "text" }
+          - { label: "Button-Text", name: "button_text", widget: "string" }
+          - { label: "Button-Link", name: "button_link", widget: "string" }
+
+  - name: "seiten"
+    label: "Weitere Seiten"
+    files:
+      - name: "ueber-andrea"
+        label: "Über Andrea"
+        file: "_data/ueber_andrea.yml"
+        fields:
+          - { label: "Seitentitel", name: "title", widget: "string" }
+          - { label: "Einleitung", name: "intro", widget: "text" }
+          - { label: "Porträtbild", name: "image", widget: "image", required: false }
+          - { label: "Über mich", name: "body", widget: "text" }
+          - { label: "Qualifikationen", name: "qualifications", widget: "list", field: { label: "Qualifikation", name: "qualification", widget: "string" } }
+      - name: "retreat"
+        label: "Dein.Yog.Art of Retreat"
+        file: "_data/retreat.yml"
+        fields:
+          - { label: "Seitentitel", name: "title", widget: "string" }
+          - { label: "Einleitung", name: "intro", widget: "text" }
+          - { label: "Bild", name: "image", widget: "image", required: false }
+          - { label: "Inhalt", name: "body", widget: "text" }
+          - { label: "Angebote / Termine", name: "offers", widget: "list", required: false, fields: [{ label: "Titel", name: "title", widget: "string" }, { label: "Beschreibung", name: "description", widget: "text" }]
