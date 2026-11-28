@@ -150,3 +150,36 @@
 .about-signoff{margin-top:2rem!important;font:500 1.3rem var(--serif);color:var(--green)!important}
 .about-signoff span{font-size:2rem}
 @media(max-width:760px){.about-hero__grid{grid-template-columns:1fr;gap:2.5rem}.about-hero__copy{max-width:none}.about-portrait{justify-self:center;max-width:430px}.about-portrait img{aspect-ratio:4/4.5}.about-reading h2{font-size:2.7rem}.about-section-label{margin-bottom:.8rem}}
+
+
+/* Über Andrea – alle Inhaltsabschnitte ab „Mein Weg“ zentriert */
+.about-page .about-reading{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.about-page .about-section-label{
+  justify-content:center;
+  gap:1rem;
+}
+.about-page .about-reading h2,
+.about-page .about-reading>p{
+  margin-left:auto;
+  margin-right:auto;
+}
+.about-page .about-reading>p{
+  text-align:center;
+}
+.about-page .about-qualifications{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.about-page .about-qualifications li{
+  text-align:center;
+}
+.about-page .about-origin,
+.about-page .about-closing-quote,
+.about-page .about-signoff{
+  text-align:center;
+}
