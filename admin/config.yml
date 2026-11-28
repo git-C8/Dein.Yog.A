@@ -11,44 +11,60 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "website"
-    label: "Willkommen – Homepage"
+  - name: "willkommen"
+    label: "Willkommen"
     files:
-      - name: "website"
-        label: "Homepage-Inhalte"
-        file: "_data/website.yml"
+      - name: "willkommen"
+        label: "Willkommen – Startbereich"
+        file: "_data/willkommen.yml"
         fields:
           - { label: "Hero-Überschrift", name: "hero_title", widget: "string" }
           - { label: "Hero-Untertitel", name: "hero_subtitle", widget: "text" }
           - { label: "Hero-Bild", name: "hero_image", widget: "image" }
-          - { label: "Begrüßung – Überschrift", name: "intro_title", widget: "string" }
-          - { label: "Begrüßung – Unterüberschrift", name: "intro_subtitle", widget: "string" }
-          - label: "Begrüßung – Textabsätze"
+          - { label: "Überschrift", name: "intro_title", widget: "string" }
+          - { label: "Unterüberschrift", name: "intro_subtitle", widget: "string" }
+          - label: "Textabsätze"
             name: "intro_paragraphs"
             widget: "list"
             field: { label: "Absatz", name: "paragraph", widget: "text" }
-          - { label: "Begrüßung – Abschlusssatz", name: "intro_closing", widget: "string" }
-          - { label: "Begrüßungsbild", name: "intro_image", widget: "image" }
-          - { label: "Winter.Journey anzeigen", name: "journey_visible", widget: "boolean", default: true }
-          - { label: "Journey-Titel", name: "journey_title", widget: "string" }
-          - { label: "Journey-Zeitraum", name: "journey_period", widget: "string" }
-          - { label: "Journey-Einleitung", name: "journey_intro", widget: "text" }
-          - label: "Journey-Beschreibung"
+          - { label: "Abschlusssatz", name: "intro_closing", widget: "string" }
+          - { label: "Bild", name: "intro_image", widget: "image" }
+
+  - name: "saison"
+    label: "Saison"
+    files:
+      - name: "saison"
+        label: "Saison – Winter.Journey"
+        file: "_data/saison.yml"
+        fields:
+          - { label: "Saison anzeigen", name: "journey_visible", widget: "boolean", default: true }
+          - { label: "Titel", name: "journey_title", widget: "string" }
+          - { label: "Zeitraum", name: "journey_period", widget: "string" }
+          - { label: "Einleitung", name: "journey_intro", widget: "text" }
+          - label: "Beschreibungstexte"
             name: "journey_description"
             widget: "list"
             field: { label: "Absatz", name: "paragraph", widget: "text" }
           - { label: "Early-Bird-Text", name: "early_bird_text", widget: "string" }
           - { label: "Early-Bird-Stichtag", name: "early_bird_deadline", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-          - { label: "Journey-Bild", name: "journey_image", widget: "image" }
-          - { label: "Journey-Button", name: "journey_button_text", widget: "string" }
-          - { label: "Journey-Link", name: "journey_button_link", widget: "string" }
-          - { label: "Standort-Überschrift", name: "location_title", widget: "string" }
-          - { label: "Standort-Unterüberschrift", name: "location_subtitle", widget: "string" }
-          - label: "Standort-Textabsätze"
+          - { label: "Bild", name: "journey_image", widget: "image" }
+          - { label: "Button-Beschriftung", name: "journey_button_text", widget: "string" }
+          - { label: "Button-Link", name: "journey_button_link", widget: "string" }
+
+  - name: "ort"
+    label: "Ort"
+    files:
+      - name: "ort"
+        label: "Ort – Dein Platz zum Ankommen"
+        file: "_data/ort.yml"
+        fields:
+          - { label: "Überschrift", name: "location_title", widget: "string" }
+          - { label: "Unterüberschrift", name: "location_subtitle", widget: "string" }
+          - label: "Textabsätze"
             name: "location_paragraphs"
             widget: "list"
             field: { label: "Absatz", name: "paragraph", widget: "text" }
-          - label: "Standort-Bildcarousel (genau 4 Bilder)"
+          - label: "Bilderkarussell (genau 4 Bilder)"
             name: "location_images"
             widget: "list"
             min: 4
@@ -59,14 +75,18 @@ collections:
           - { label: "Anmeldebutton", name: "location_button_text", widget: "string" }
           - { label: "Route-Button", name: "route_button_text", widget: "string" }
           - { label: "Routen-Link", name: "route_link", widget: "string" }
-          - { label: "CTA-Überschrift", name: "cta_title", widget: "string" }
-          - { label: "CTA-Zeile 1", name: "cta_line_one", widget: "string" }
-          - { label: "CTA-Zeile 2", name: "cta_line_two", widget: "text" }
-          - { label: "CTA-Button", name: "cta_button_text", widget: "string" }
-          - { label: "Kontakt-E-Mail", name: "contact_email", widget: "string" }
-          - { label: "Telefonnummer", name: "contact_phone", widget: "string" }
-          - { label: "Facebook-URL", name: "facebook_url", widget: "string", required: false }
-          - { label: "Instagram-URL", name: "instagram_url", widget: "string", required: false }
+
+  - name: "geschenk"
+    label: "Geschenk"
+    files:
+      - name: "geschenk"
+        label: "Geschenk – Abschlussbereich"
+        file: "_data/geschenk.yml"
+        fields:
+          - { label: "Überschrift", name: "cta_title", widget: "string" }
+          - { label: "Textzeile 1", name: "cta_line_one", widget: "string" }
+          - { label: "Textzeile 2", name: "cta_line_two", widget: "text" }
+          - { label: "Button-Beschriftung", name: "cta_button_text", widget: "string" }
 
   - name: "kurse"
     label: "Kurse"
