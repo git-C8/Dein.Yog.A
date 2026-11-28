@@ -1,0 +1,11 @@
+title: "Dein.Yog.A"
+description: "Yoga und Achtsamkeit in Korneuburg – persönliche Vinyasa-Flows mit Andrea Wimmer."
+url: "https://dein-yoga.at"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
