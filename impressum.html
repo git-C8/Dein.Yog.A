@@ -1,0 +1,73 @@
+---
+---
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ site.data.impressum.meta_description | escape }}">
+<meta name="theme-color" content="#FAF8F5">
+<title>{{ site.data.impressum.title | escape }} | Dein.Yog.A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="legal-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-logo" href="/">Dein.Yog.A<span>Yoga &amp; Achtsamkeit</span></a>
+    <nav class="main-navigation" aria-label="Hauptnavigation">
+      <a href="/">Willkommen</a><a href="/yoga-fuer-dich/">Dein.Yog.A für Dich</a><a href="/retreat/">Dein.Yog.Art of Retreat</a><a href="/ueber-andrea/">Über Andrea</a><a class="nav-cta" href="/kontakt/">Kontakt</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-navigation"><span></span></button>
+  </div>
+  <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile Navigation" hidden>
+    <a href="/">Willkommen</a><a href="/yoga-fuer-dich/">Dein.Yog.A für Dich</a><a href="/retreat/">Dein.Yog.Art of Retreat</a><a href="/ueber-andrea/">Über Andrea</a><a href="/kontakt/">Kontakt</a>
+  </nav>
+</header>
+<main>
+  <section class="legal-hero">
+    <div class="container">
+      <span class="eyebrow">{{ site.data.impressum.eyebrow | escape }}</span>
+      <h1>{{ site.data.impressum.title | escape }}</h1>
+      <p class="lead">{{ site.data.impressum.intro | escape }}</p>
+    </div>
+  </section>
+  <section class="section legal-content">
+    <div class="container legal-card">
+      <section class="legal-block">
+        <h2>Medieninhaberin und Diensteanbieterin</h2>
+        <p><strong>{{ site.data.impressum.name | escape }}</strong><br>{{ site.data.impressum.brand | escape }}</p>
+      </section>
+      <section class="legal-block">
+        <h2>Kontakt</h2>
+        <address>{{ site.data.impressum.street | escape }}<br>{{ site.data.impressum.postal_city | escape }}<br>{{ site.data.impressum.country | escape }}</address>
+        <p>Telefon: <a href="tel:{{ site.data.impressum.phone_link | escape }}">{{ site.data.impressum.phone_display | escape }}</a><br>
+        E-Mail: <a href="mailto:{{ site.data.impressum.email | escape }}">{{ site.data.impressum.email | escape }}</a><br>
+        Website: <a href="{{ site.data.impressum.website | escape }}">{{ site.data.impressum.website | escape }}</a></p>
+      </section>
+      <section class="legal-block">
+        <h2>{{ site.data.impressum.activity_heading | escape }}</h2>
+        <p>{{ site.data.impressum.activity_text | escape }}</p>
+      </section>
+      <section class="legal-block">
+        <h2>{{ site.data.impressum.vat_heading | escape }}</h2>
+        <p>{{ site.data.impressum.vat_text | escape }}</p>
+      </section>
+      <section class="legal-block">
+        <h2>{{ site.data.impressum.editorial_heading | escape }}</h2>
+        <p>{{ site.data.impressum.editorial_text | escape }}</p>
+      </section>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-bottom">© 2026 Dein.Yog.A – Andrea Wimmer. <a href="/impressum/">Impressum</a> · <a href="/kontakt/">Kontakt</a></div>
+</footer>
+<script>
+const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.getElementById('mobile-navigation');
+if(menuButton&&mobileNav){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileNav.hidden=open;});}
+</script>
+</body>
+</html>
