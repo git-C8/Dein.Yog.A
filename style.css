@@ -5,10 +5,5 @@
 @media(max-width:420px){.footer-grid{grid-template-columns:1fr}.button-row{align-items:stretch;flex-direction:column}.btn{width:100%}}
 
 /* Einheitliche Überschriften-Ausrichtung auf der Startseite */
-.hero-content{text-align:center;margin-inline:auto}
+.hero-content,.intro-section .section-heading,.journey-section .section-heading,.section-heading,.cta-panel{text-align:center}
 .hero h1,.hero p{margin-left:auto;margin-right:auto}
-.intro-section .content-copy>.eyebrow,
-.intro-section .content-copy>h2,
-.intro-section .content-copy>h3,
-.journey-section .content-copy>.eyebrow,
-.journey-section .content-copy>h2{text-align:center}
