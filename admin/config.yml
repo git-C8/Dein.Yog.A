@@ -266,3 +266,26 @@ collections:
           - { label: "Kontakttext", name: "cta_text", widget: "text" }
           - { label: "Button-Beschriftung", name: "button_text", widget: "string" }
           - { label: "Button-Link", name: "button_link", widget: "string" }
+      - name: "impressum"
+        label: "Impressum"
+        file: "_data/impressum.yml"
+        fields:
+          - { label: "Seitentitel", name: "title", widget: "string" }
+          - { label: "SEO-Beschreibung", name: "meta_description", widget: "text" }
+          - { label: "Kleine Überschrift", name: "eyebrow", widget: "string" }
+          - { label: "Einleitung", name: "intro", widget: "text" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Marke / Auftritt", name: "brand", widget: "string" }
+          - { label: "Straße und Hausnummer", name: "street", widget: "string" }
+          - { label: "PLZ und Ort", name: "postal_city", widget: "string" }
+          - { label: "Land", name: "country", widget: "string" }
+          - { label: "Telefon (Anzeige)", name: "phone_display", widget: "string" }
+          - { label: "Telefon (Link)", name: "phone_link", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - { label: "Website", name: "website", widget: "string" }
+          - { label: "Tätigkeitsbereich – Überschrift", name: "activity_heading", widget: "string" }
+          - { label: "Tätigkeitsbereich – Text", name: "activity_text", widget: "text" }
+          - { label: "Umsatzsteuer – Überschrift", name: "vat_heading", widget: "string" }
+          - { label: "Umsatzsteuer – Text", name: "vat_text", widget: "text" }
+          - { label: "Blattlinie – Überschrift", name: "editorial_heading", widget: "string" }
+          - { label: "Blattlinie – Text", name: "editorial_text", widget: "text" }
