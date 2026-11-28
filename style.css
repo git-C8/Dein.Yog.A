@@ -11,3 +11,22 @@
 /* Saison-Überschrift: mehr Platz, damit "27" nicht allein in eine zweite Zeile rutscht */
 .journey-section .section-heading{max-width:100%}
 .journey-section .section-heading h2{max-width:100%;margin-inline:auto}
+
+/* Einheitliche Bildformate und Spaltenbreiten in den drei Bildabschnitten */
+.intro-section .content-grid,
+.journey-section .content-grid,
+.location-layout{grid-template-columns:1fr 1fr}
+.intro-section .content-image,
+.journey-section .content-image,
+.location-layout .carousel-track{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.location-layout .carousel{width:100%}
+.journey-section .section-heading h2{font-size:clamp(2.35rem,3.8vw,3.45rem);max-width:100%;text-wrap:balance}
+@media(max-width:700px){
+  .intro-section .content-grid,
+  .journey-section .content-grid,
+  .location-layout{grid-template-columns:1fr}
+  .intro-section .content-image,
+  .journey-section .content-image,
+  .location-layout .carousel-track{aspect-ratio:4/3}
+  .journey-section .section-heading h2{font-size:clamp(2.2rem,8vw,3rem)}
+}
