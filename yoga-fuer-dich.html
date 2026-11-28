@@ -1,3 +1,69 @@
 ---
 ---
-<!doctype html><html lang="de-AT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Kurse, Yoga-Flows und saisonale Journeys in Korneuburg."><title>Dein.Yog.A für Dich | Dein.Yog.A</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><header class="site-header"><div class="container header-inner"><a class="site-logo" href="index.html">Dein.Yog.A<span>Yoga &amp; Achtsamkeit</span></a><nav class="main-navigation"><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a class="nav-cta" href="kontakt.html">Kontakt</a></nav><button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-navigation"><span></span></button></div><nav class="mobile-navigation" id="mobile-navigation" hidden><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a href="kontakt.html">Kontakt</a></nav></header><main><section class="page-hero"><div class="container narrow"><span class="eyebrow">Dein Angebot</span><h1>{{ site.data.yoga_fuer_dich.seitentitel | escape }}</h1><p class="lead">{{ site.data.yoga_fuer_dich.einleitung | escape }}</p></div></section><section class="section section-sand"><div class="container narrow"><span class="eyebrow">{{ site.data.yoga_fuer_dich.saison_zeitraum | escape }}</span><h2>{{ site.data.yoga_fuer_dich.saison_titel | escape }}</h2><p class="lead">{{ site.data.yoga_fuer_dich.saison_einleitung | escape }}</p><p>{{ site.data.yoga_fuer_dich.saison_beschreibung | escape }}</p><p>{{ site.data.yoga_fuer_dich.saison_termine | escape }}</p><p>{{ site.data.yoga_fuer_dich.saison_modell | escape }}</p><p class="early-bird">{{ site.data.yoga_fuer_dich.early_bird_text | escape }}</p></div></section><section class="section"><div class="container narrow"><span class="eyebrow">Regelmäßige Praxis</span><h2>{{ site.data.yoga_fuer_dich.kurs_titel | escape }}</h2><p class="lead">{{ site.data.yoga_fuer_dich.kurs_beschreibung | escape }}</p><p>{{ site.data.yoga_fuer_dich.zielgruppe | escape }}</p><p><strong>Dauer:</strong> {{ site.data.yoga_fuer_dich.dauer | escape }}</p><div class="info-grid"><article><h3>Ankommen</h3><p>{{ site.data.yoga_fuer_dich.ablauf_ankommen | escape }}</p></article><article><h3>Asanas &amp; Flows</h3><p>{{ site.data.yoga_fuer_dich.ablauf_flows | escape }}</p></article><article><h3>Entspannung</h3><p>{{ site.data.yoga_fuer_dich.ablauf_entspannung | escape }}</p></article></div><p>{{ site.data.yoga_fuer_dich.ankunft_hinweis | escape }}</p><p>{{ site.data.yoga_fuer_dich.mitbringen | escape }}</p><p>{{ site.data.yoga_fuer_dich.ort_hinweis | escape }}</p><p>{{ site.data.yoga_fuer_dich.storno_hinweis | escape }}</p><p>{{ site.data.yoga_fuer_dich.teilnahme_hinweis | escape }}</p><a class="btn" href="{{ site.data.yoga_fuer_dich.button_link }}">{{ site.data.yoga_fuer_dich.button_text | escape }}</a></div></section><section class="section section-sage"><div class="container narrow"><h2>Dein.Yog.A – deine Zeit. Deine Bewegung.</h2><p>Du möchtest regelmäßig praktizieren oder hast Fragen zu den Angeboten? Ich freue mich auf deine Nachricht.</p><a class="btn" href="kontakt.html">Kontakt</a></div></section></main><footer class="site-footer"><div class="container footer-bottom">© 2026 Dein.Yog.A – Andrea Wimmer. <a href="kontakt.html">Kontakt</a></div></footer><script>const m=document.querySelector('.menu-toggle'),n=document.getElementById('mobile-navigation');if(m&&n)m.onclick=()=>{const o=m.getAttribute('aria-expanded')==='true';m.setAttribute('aria-expanded',String(!o));n.hidden=o};</script></body></html>
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Entdecke saisonale Yoga Journeys, flexible Teilnahme- und Kostenmodelle sowie persönliche Yoga-Angebote bei Dein.Yog.A in Korneuburg.">
+<title>{{ site.data.yoga_fuer_dich.seitentitel | escape }} | Dein.Yog.A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+<a class="site-logo" href="index.html">Dein.Yog.A<span>Yoga &amp; Achtsamkeit</span></a>
+<nav class="main-navigation" aria-label="Hauptnavigation"><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html" aria-current="page">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a class="nav-cta" href="kontakt.html">Kontakt</a></nav>
+<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-navigation"><span></span></button></div>
+<nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile Navigation" hidden><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a href="kontakt.html">Kontakt</a></nav></header>
+<main>
+<section class="page-hero yoga-page-hero"><div class="container narrow centered">
+<span class="eyebrow">Dein Angebot</span><h1>{{ site.data.yoga_fuer_dich.seitentitel | escape }}</h1>
+<p class="lead">Deine Zeit für Bewegung, Kräftigung und Entspannung.</p>
+</div></section>
+
+<section class="section yoga-explanation"><div class="container narrow centered">
+<span class="eyebrow">{{ site.data.yoga_fuer_dich.erklaerung.eyebrow | escape }}</span>
+<h2>{{ site.data.yoga_fuer_dich.erklaerung.titel | escape }}</h2>
+<p>{{ site.data.yoga_fuer_dich.erklaerung.text | escape }}</p>
+<p class="closing-line">{{ site.data.yoga_fuer_dich.erklaerung.schlusssatz | escape }}</p>
+<a class="btn" href="{{ site.data.yoga_fuer_dich.erklaerung.button_link | escape }}">{{ site.data.yoga_fuer_dich.erklaerung.button_text | escape }}</a>
+</div></section>
+
+<section class="section section-sand yoga-journey"><div class="container">
+<div class="section-heading"><span class="eyebrow">{{ site.data.yoga_fuer_dich.journey.eyebrow | escape }}</span><h2>{{ site.data.yoga_fuer_dich.journey.titel | escape }}</h2><p class="lead">{{ site.data.yoga_fuer_dich.journey.einleitung | escape }}</p></div>
+<div class="schedule-wrap"><table class="schedule-table"><thead><tr><th>Woche</th><th>{{ site.data.yoga_fuer_dich.journey.montag_label | escape }}<span>{{ site.data.yoga_fuer_dich.journey.zeit | escape }}</span></th><th>{{ site.data.yoga_fuer_dich.journey.donnerstag_label | escape }}<span>{{ site.data.yoga_fuer_dich.journey.zeit | escape }}</span></th></tr></thead><tbody>
+{% for woche in site.data.yoga_fuer_dich.journey.wochen %}<tr><th scope="row">{{ forloop.index }}</th><td>{% if woche.montag != "" %}{{ woche.montag | escape }}{% else %}–{% endif %}</td><td>{% if woche.donnerstag != "" %}{{ woche.donnerstag | escape }}{% else %}–{% endif %}</td></tr>{% endfor %}
+</tbody></table></div>
+<div class="saturday-panel"><div><span class="eyebrow">{{ site.data.yoga_fuer_dich.journey.samstag_titel | escape }}</span><h3>{{ site.data.yoga_fuer_dich.journey.samstag_zeit | escape }}</h3></div><div class="saturday-dates">{% for datum in site.data.yoga_fuer_dich.journey.samstage %}<span>{{ datum | escape }}</span>{% endfor %}</div></div>
+<p class="group-note">{{ site.data.yoga_fuer_dich.journey.kleingruppen_hinweis | escape }}</p>
+</div></section>
+
+<section class="section yoga-models"><div class="container">
+<div class="section-heading"><span class="eyebrow">{{ site.data.yoga_fuer_dich.modelle.eyebrow | escape }}</span><h2>{{ site.data.yoga_fuer_dich.modelle.titel | escape }}</h2><p class="lead">{{ site.data.yoga_fuer_dich.modelle.einleitung | escape }}</p></div>
+<div class="model-grid">{% for angebot in site.data.yoga_fuer_dich.modelle.angebote %}<article class="model-card"><span class="model-duration">{{ angebot.umfang | escape }}</span><h3>{{ angebot.titel | escape }}</h3><p class="model-price">{{ angebot.preis | escape }}</p><p>{{ angebot.beschreibung | escape }}</p>{% if angebot.leistungen.size > 0 %}<ul>{% for leistung in angebot.leistungen %}<li>{{ leistung | escape }}</li>{% endfor %}</ul>{% endif %}</article>{% endfor %}</div>
+<p class="group-note">{{ site.data.yoga_fuer_dich.modelle.gruppenhinweis | escape }}</p>
+</div></section>
+
+<section class="section section-sage yoga-earlybird"><div class="container">
+<div class="section-heading"><span class="eyebrow">{{ site.data.yoga_fuer_dich.early_bird.eyebrow | escape }}</span><h2>{{ site.data.yoga_fuer_dich.early_bird.titel | escape }}</h2><p class="lead">{{ site.data.yoga_fuer_dich.early_bird.einleitung | escape }}</p></div>
+<div class="earlybird-list">{% for angebot in site.data.yoga_fuer_dich.early_bird.angebote %}<div class="earlybird-row"><strong>{{ angebot.titel | escape }}</strong><span class="old-price">{{ angebot.normalpreis | escape }}</span><span class="new-price">{{ angebot.fruehbucherpreis | escape }}</span></div>{% endfor %}</div>
+<p class="earlybird-deadline">Gültig bis einschließlich {{ site.data.yoga_fuer_dich.early_bird.stichtag | escape }}</p>
+</div></section>
+
+<section class="section yoga-session"><div class="container">
+<div class="section-heading"><span class="eyebrow">{{ site.data.yoga_fuer_dich.session.eyebrow | escape }}</span><h2>{{ site.data.yoga_fuer_dich.session.titel | escape }}</h2></div>
+<div class="session-grid">{% for schritt in site.data.yoga_fuer_dich.session.schritte %}<article class="session-card"><span class="session-number">0{{ forloop.index }}</span><h3>{{ schritt.titel | escape }}</h3><p>{{ schritt.text | escape }}</p></article>{% endfor %}</div>
+<div class="audience-panel"><div><span class="eyebrow">Deine Praxis</span><h3>{{ site.data.yoga_fuer_dich.session.zielgruppe_titel | escape }}</h3><p>{{ site.data.yoga_fuer_dich.session.zielgruppe_text | escape }}</p></div><div class="duration-mark"><span>Dauer</span><strong>{{ site.data.yoga_fuer_dich.session.dauer | escape }}</strong></div></div>
+</div></section>
+
+<section class="section section-sand yoga-know"><div class="container">
+<div class="section-heading"><span class="eyebrow">{{ site.data.yoga_fuer_dich.wissen.eyebrow | escape }}</span><h2>{{ site.data.yoga_fuer_dich.wissen.titel | escape }}</h2></div>
+<div class="know-grid"><article><h3>{{ site.data.yoga_fuer_dich.wissen.vorbereitung_titel | escape }}</h3><p>{{ site.data.yoga_fuer_dich.wissen.vorbereitung_text | escape }}</p></article><article><h3>{{ site.data.yoga_fuer_dich.wissen.gesundheit_titel | escape }}</h3><p>{{ site.data.yoga_fuer_dich.wissen.gesundheit_text | escape }}</p></article></div>
+</div></section>
+
+<section class="section section-sage"><div class="container cta-panel"><span class="eyebrow">Deine Zeit für dich</span><h2>Dein.Yog.A – deine Zeit. Deine Bewegung.</h2><p>Du möchtest deinen Platz sichern oder hast Fragen zu den Angeboten? Ich freue mich auf deine Nachricht.</p><a class="btn" href="kontakt.html">Jetzt anfragen</a></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-bottom">© 2026 Dein.Yog.A – Andrea Wimmer. <a href="kontakt.html">Kontakt</a></div></footer>
+<script>const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.getElementById('mobile-navigation');if(menuButton&&mobileNav){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileNav.hidden=open;});}</script>
+</body></html>
