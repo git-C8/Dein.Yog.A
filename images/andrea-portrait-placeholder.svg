@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+<title id="title">Porträtplatzhalter für Andrea</title><desc id="desc">Ruhige, abstrakte Illustration als vorläufiger Platzhalter für das Porträtfoto.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0ebe2"/><stop offset="1" stop-color="#e5ebe3"/></linearGradient></defs>
+<rect width="900" height="1100" fill="url(#bg)"/>
+<circle cx="450" cy="410" r="205" fill="#d8dfd4"/>
+<path d="M170 1000c22-235 130-355 280-355s258 120 280 355" fill="#b9c8b7"/>
+<circle cx="450" cy="390" r="135" fill="#f7f3ed"/>
+<path d="M315 385c-5-130 68-225 163-225 104 0 160 91 143 226-28-43-64-73-112-87-50 47-112 72-194 86z" fill="#899b87"/>
+<text x="450" y="930" text-anchor="middle" fill="#596b58" font-family="Georgia,serif" font-size="54">Andrea</text>
+<text x="450" y="985" text-anchor="middle" fill="#697067" font-family="Arial,sans-serif" font-size="20" letter-spacing="5">PORTRÄT FOLGT</text>
+</svg>
