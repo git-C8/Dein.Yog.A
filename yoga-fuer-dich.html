@@ -8,14 +8,14 @@
 <title>{{ site.data.yoga_fuer_dich.seitentitel | escape }} | Dein.Yog.A</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header class="site-header"><div class="container header-inner">
-<a class="site-logo" href="index.html">Dein.Yog.A<span>Yoga &amp; Achtsamkeit</span></a>
-<nav class="main-navigation" aria-label="Hauptnavigation"><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html" aria-current="page">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a class="nav-cta" href="kontakt.html">Kontakt</a></nav>
+<a class="site-logo" href="/">Dein.Yog.A<span>Yoga &amp; Achtsamkeit</span></a>
+<nav class="main-navigation" aria-label="Hauptnavigation"><a href="/">Willkommen</a><a href="/yoga-fuer-dich/" aria-current="page">Dein.Yog.A für Dich</a><a href="/retreat/">Dein.Yog.Art of Retreat</a><a href="/ueber-andrea/">Über Andrea</a><a class="nav-cta" href="/kontakt/">Kontakt</a></nav>
 <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-navigation"><span></span></button></div>
-<nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile Navigation" hidden><a href="index.html">Willkommen</a><a href="yoga-fuer-dich.html">Dein.Yog.A für Dich</a><a href="retreat.html">Dein.Yog.Art of Retreat</a><a href="ueber-andrea.html">Über Andrea</a><a href="kontakt.html">Kontakt</a></nav></header>
+<nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile Navigation" hidden><a href="/">Willkommen</a><a href="/yoga-fuer-dich/">Dein.Yog.A für Dich</a><a href="/retreat/">Dein.Yog.Art of Retreat</a><a href="/ueber-andrea/">Über Andrea</a><a href="/kontakt/">Kontakt</a></nav></header>
 <main>
 <section class="page-hero yoga-page-hero"><div class="container narrow centered">
 <span class="eyebrow">Dein Angebot</span><h1>{{ site.data.yoga_fuer_dich.seitentitel | escape }}</h1>
@@ -27,7 +27,7 @@
 <h2>{{ site.data.yoga_fuer_dich.erklaerung.titel | escape }}</h2>
 <p>{{ site.data.yoga_fuer_dich.erklaerung.text | escape }}</p>
 <p class="closing-line">{{ site.data.yoga_fuer_dich.erklaerung.schlusssatz | escape }}</p>
-<a class="btn" href="{{ site.data.yoga_fuer_dich.erklaerung.button_link | escape }}">{{ site.data.yoga_fuer_dich.erklaerung.button_text | escape }}</a>
+<a class="btn" href="{{ site.data.yoga_fuer_dich.erklaerung.button_link | relative_url }}">{{ site.data.yoga_fuer_dich.erklaerung.button_text | escape }}</a>
 </div></section>
 
 <section class="section section-sand yoga-journey"><div class="container">
@@ -62,8 +62,8 @@
 <div class="know-grid"><article><h3>{{ site.data.yoga_fuer_dich.wissen.vorbereitung_titel | escape }}</h3><p>{{ site.data.yoga_fuer_dich.wissen.vorbereitung_text | escape }}</p></article><article><h3>{{ site.data.yoga_fuer_dich.wissen.gesundheit_titel | escape }}</h3><p>{{ site.data.yoga_fuer_dich.wissen.gesundheit_text | escape }}</p></article></div>
 </div></section>
 
-<section class="section section-sage"><div class="container cta-panel"><span class="eyebrow">Deine Zeit für dich</span><h2>Dein.Yog.A – deine Zeit. Deine Bewegung.</h2><p>Du möchtest deinen Platz sichern oder hast Fragen zu den Angeboten? Ich freue mich auf deine Nachricht.</p><a class="btn" href="kontakt.html">Jetzt anfragen</a></div></section>
+<section class="section section-sage"><div class="container cta-panel"><span class="eyebrow">Deine Zeit für dich</span><h2>Dein.Yog.A – deine Zeit. Deine Bewegung.</h2><p>Du möchtest deinen Platz sichern oder hast Fragen zu den Angeboten? Ich freue mich auf deine Nachricht.</p><a class="btn" href="/kontakt/">Jetzt anfragen</a></div></section>
 </main>
-<footer class="site-footer"><div class="container footer-bottom">© 2026 Dein.Yog.A – Andrea Wimmer. <a href="kontakt.html">Kontakt</a></div></footer>
+<footer class="site-footer"><div class="container footer-bottom">© 2026 Dein.Yog.A – Andrea Wimmer. <a href="/kontakt/">Kontakt</a></div></footer>
 <script>const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.getElementById('mobile-navigation');if(menuButton&&mobileNav){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileNav.hidden=open;});}</script>
 </body></html>
