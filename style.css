@@ -3,3 +3,12 @@
 @media(max-width:900px){.main-navigation{gap:.8rem}.main-navigation a{font-size:.72rem}.content-grid{gap:2.5rem}.content-image{height:430px}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.container{width:min(100% - 36px,560px)}.header-inner{min-height:76px}.main-navigation{display:none}.menu-toggle{display:block;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:transparent;position:relative}.menu-toggle span,.menu-toggle span:before,.menu-toggle span:after{position:absolute;left:11px;width:18px;height:1.5px;background:var(--ink);content:""}.menu-toggle span:before{left:0;top:-6px}.menu-toggle span:after{left:0;top:6px}.mobile-navigation:not([hidden]){display:grid;gap:0;padding:0 18px 1rem;background:var(--paper)}.mobile-navigation a{padding:.8rem 0;border-top:1px solid var(--line)}.hero{min-height:540px}.hero-content{padding-block:5rem}.content-grid,.location-layout,.contact-panel{grid-template-columns:1fr}.content-image{height:auto;aspect-ratio:4/3}.section{padding:4rem 0}.section-heading{text-align:left}.info-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:1.5rem}.page-hero{padding:4rem 0 3rem}}
 @media(max-width:420px){.footer-grid{grid-template-columns:1fr}.button-row{align-items:stretch;flex-direction:column}.btn{width:100%}}
+
+/* Einheitliche Überschriften-Ausrichtung auf der Startseite */
+.hero-content{text-align:center;margin-inline:auto}
+.hero h1,.hero p{margin-left:auto;margin-right:auto}
+.intro-section .content-copy>.eyebrow,
+.intro-section .content-copy>h2,
+.intro-section .content-copy>h3,
+.journey-section .content-copy>.eyebrow,
+.journey-section .content-copy>h2{text-align:center}
